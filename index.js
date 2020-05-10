@@ -1,6 +1,9 @@
 const test = 'NPM script test';
 console.log(test); // testing 
 
+const camelCase = require('camelcase');
+console.log(camelCase('hello-world'));
+
 const express = require('express'); // load express package
 const app = express();
 const port = 3000 // browser adress
