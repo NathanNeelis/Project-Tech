@@ -1,0 +1,27 @@
+{
+  "name": "project-tech",
+  "version": "1.0.0",
+  "description": "this is a dating service project in blok tech",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "say-hello": "echo 'Hello world'" 
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanNeelis/Project-Tech.git"
+  },
+  "author": "Nathan Neelis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NathanNeelis/Project-Tech/issues"
+  },
+  "homepage": "https://github.com/NathanNeelis/Project-Tech#readme",
+  "dependencies": {
+    "camelcase": "^6.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
