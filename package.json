@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "say-hello": "echo 'Hello world'" 
-    
+    "say-hello": "echo 'Hello world'"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,8 @@
   },
   "homepage": "https://github.com/NathanNeelis/Project-Tech#readme",
   "dependencies": {
-    "camelcase": "^6.0.0"
+    "camelcase": "^6.0.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
