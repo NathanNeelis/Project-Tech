@@ -22,3 +22,21 @@ app.listen(port, function () {
     return console.log('Server is working!') // sends a confirmation that the server works.
   })
 
+
+//Other way of writing
+
+//app.get('/', home)
+//app.get('/about', about)
+
+// Home function
+//   function home(req, res) {
+//       res.sendFile(__dirname + "/static");
+//   }
+
+// about function
+
+// function about(req, res){
+//     res.sendFile(__dirname + "/static/about.html");
+// }
+
+  
