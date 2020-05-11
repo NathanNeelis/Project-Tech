@@ -1,9 +1,13 @@
+// run script testing
 const test = 'NPM script test';
 console.log(test); // testing 
 
+// NPM packages
 const camelCase = require('camelcase');
 console.log(camelCase('hello-world'));
 
+
+// Serve
 const express = require('express'); // load express package
 const app = express();
 const port = 3000 // browser adress
