@@ -13,15 +13,28 @@
 
     <script>
         function byTagName(node, tagName) {
-            //let array = Array.from(document.body.getElementsByTagName(tagName));
-//            if (node.nodeType == node.ELEMENT_NODE) {
-//                for (let i = 0; i < node.childNodes.length; i++) {
-//                    if (byTagName(node.childNodes[i], tagName)){
-//
-//                    }
-//                }
-//            }
+            let array = Array.from(document.body.getElementsByTagName(tagName));
+            if (node.nodeType == node.ELEMENT_NODE) {
+                for (let i = 0; i < node.childNodes.length; i++) {
+                    if (byTagName(node.childNodes[i], tagName)) {
+
+                    }
+                }
+            }
         }
+
+        //        code Bjorn - NIET GOED geen query selector gebruiken
+        //        function byTagName(node, tagName) {
+        //
+        //            if (node.nodeType == Node.ELEMENT_NODE) {
+        //                let tagFilter = node.querySelectorAll(tagName);
+        //                let = tagFilterContent = tagFilter.length
+        //
+        //                return tagFilterContent;
+        //            }
+        //
+        //        }
+
 
         console.log(byTagName(document.body, "h1").length);
         // → 1

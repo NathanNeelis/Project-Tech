@@ -1,8 +1,490 @@
-h1 {
-  color:pink;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
 }
 
-p{
-  font-size:1.5em;
-  color:purple;
+body {
+    background-image: linear-gradient(white, #f6f6f6, white);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Headings */
+
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+h2 {
+    font-weight: 700;
+    color: #494948;
+}
+
+h4 {
+    font-weight: 700;
+    color: #494948;
+}
+
+
+p {
+    line-height: 1.5rem;
+
+}
+
+/*--------------------------- Navigation --------------------------------*/
+/*--------------------------- Navigation --------------------------------*/
+/*--------------------------- Navigation --------------------------------*/
+
+/* logo */
+header img {
+    display: block;
+    margin: 0 auto;
+    width: 18em;
+}
+
+/* naviagion */
+nav {
+    background-color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: .8rem;
+    margin: 0 0 2rem 0;
+
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+li {
+    padding: 1rem 2rem 1rem 2rem;
+    list-style: none;
+    border-bottom: 1px solid white;
+}
+
+ul li a {
+    transition: all .5s ease-in-out;
+    text-decoration: none;
+    color: #494948;
+}
+
+ul li a:hover,
+ul li a:focus {
+    color: #FF0073;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #494948;
+}
+
+.filterButton {
+    padding: .5rem 2rem;
+    background-color: #FF0073;
+    border-radius: .5rem;
+    color: white;
+    margin: 2rem 0 0 0;
+    transition: all .5s ease;
+
+}
+
+.filterButton:hover{
+    color:white;
+    box-shadow: 10px 10px 30px #a7a7a7,
+    -10px -10px 30px #e1e1e1;
+}
+
+/*--------------------------- Filter function --------------------------------*/
+/*--------------------------- Filter function --------------------------------*/
+/*--------------------------- Filter function --------------------------------*/
+
+.filter {
+    background-color: #FF0073;
+}
+
+.filterContainer {
+    width: 85vw;
+    margin: 0 auto;
+    padding: 2rem 0 0rem 0;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset:first-of-type {
+    margin-bottom:3rem;
+}
+
+legend {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    margin: 1rem auto;
+
+}
+
+form fieldset label {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+    margin: 1rem 0 0 0;
+}
+
+form input[type=text] {
+    padding: 1rem;
+    border-width: .1rem;
+    border-style: solid;
+    border-color: white;
+    border-radius: .5rem;
+    width: 80vw;
+    margin: .5rem 0 1rem 0;
+}
+
+
+/* Gender buttons */
+
+
+.filter .filterContainer article form fieldset:nth-child(2) div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filter .filterContainer article form fieldset:nth-child(2) div div label span {
+    text-align: center;
+    padding: 1rem;
+    display: block;
+    border-radius: .5rem;
+    color: white;
+    width: 8rem;
+    margin: 0 1rem 2rem 0;
+    background: #FF0073;
+    box-shadow: 10px 10px 28px #a6004b,
+        -10px -10px 28px #ff009b;
+    font-weight: 400;
+}
+
+
+.filter .filterContainer article form fieldset:nth-child(2) div div label span i {
+    margin-right: .5rem;
+}
+
+.filter form div div label {
+    cursor: pointer;
+}
+
+
+
+section form div div input[type=checkbox] {
+    position: absolute;
+    z-index: -1;
+}
+
+
+.filter form fieldset:nth-child(2) div div input[type=checkbox]:checked+label span {
+    background: #FF0073;
+    box-shadow: inset 10px 10px 28px #a6004b,
+        inset -10px -10px 28px #ff009b;
+}
+
+.filter form input[type=submit] {
+    display: block;
+    margin: 2rem 0 2rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    -webkit-appearance: none;
+    border: 0 solid white;
+    background: #FF0073;
+    box-shadow: 10px 10px 28px #a6004b,
+        -10px -10px 28px #ff009b;
+    color: white;
+    width: 8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    transition: all 1s ease;
+
+}
+
+
+
+.search {
+    position: absolute;
+    z-index: -1;
+}
+
+/*--------------------------- Introduction --------------------------------*/
+/*--------------------------- Introduction --------------------------------*/
+/*--------------------------- Introduction --------------------------------*/
+
+.introduction {
+    background-color: #0099D1;
+
+}
+
+.introduction article p,
+.boardGames article p {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+
+.introduction h2,
+.boardGames h2  {
+    color: white;
+}
+
+.introduction div,
+.boardGames div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2rem auto 4rem auto;
+}
+
+
+.introduction img,
+.boardGames img {
+    width:80vw;
+    margin: 2rem 0 0 0;
+    border-radius:.5rem;
+}
+
+.introduction article,
+.boardGames article {
+    margin: 2rem;
+}
+
+.introduction article h2,
+.boardGames article h2 {
+    margin: 1rem 0 1rem 0;
+}
+
+
+/*--------------------------- boardGames --------------------------------*/
+
+.boardGames {
+    background-color: #32DCB4;
+
+}
+
+
+/*--------------------------- Card profiles --------------------------------*/
+/*--------------------------- Card profiles --------------------------------*/
+/*--------------------------- Card profiles --------------------------------*/
+.category-fit,
+.category-boardgames {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.category-fit h2,
+.category-boardgames h2 {
+    margin: 1em 12.5vw 0 12.5vw;
+}
+
+.category-fit div,
+.category-boardgames div {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    overflow: auto;
+    white-space: nowrap;
+    /* margin: 0 2em 0 0 ; */
+}
+
+.category-fit img,
+.category-boardgames img {
+    border-radius: .9em .9em 0em 0em;
+    width: 12em;
+}
+
+.category-fit div article,
+.category-boardgames div article {
+    margin: 2em 10vw 4em 12.5vw;
+    border-radius: 1em;
+    background: #32DCB4;
+    box-shadow: 10px 10px 30px #a7a7a7,
+        -10px -10px 30px #e1e1e1;
+    display: inline-block;
+    transition: transform .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+
+}
+
+.category-fit div article{
+    background-color:#0099D1;
+}
+
+
+.category-fit div article h4,
+.category-boardgames div article h4 {
+    padding: .5em 1em 0em 1em;
+    color: white;
+
+}
+
+.category-fit div article p,
+.category-boardgames div article p {
+    padding: 0em 1em .5em 1em;
+    color: white;
+}
+
+/*---------------------------  footer --------------------------------*/
+/*---------------------------  footer --------------------------------*/
+/*---------------------------  footer --------------------------------*/
+
+
+
+footer {
+    background-color: #FF0073;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: .75em;
+    margin: 0;
+    padding: 3em;
+    text-align: center;
+}
+
+
+
+/*--------------------------- break points--------------------------------*/
+/*--------------------------- break points --------------------------------*/
+/*--------------------------- break points --------------------------------*/
+
+/* Responsive 800px START*/
+@media all and (min-width: 800px) {
+
+    /*--------------------------- Navigation --------------------------------*/
+
+
+    ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+    li {
+        border-bottom: 0px solid white;
+    }
+
+    /*--------------------------- Filter function --------------------------------*/
+
+    .filterContainer {
+        width: 40vw;
+        margin: 0 auto;
+
+    }
+
+    form input[type=text] {
+        width: 100%;
+    }
+
+    .filter .filterContainer article form fieldset:nth-child(2) div div label span {
+        transition: all 1s ease;
+    }
+
+    .filter .filterContainer article form fieldset:nth-child(2) div div:hover label span {
+        background: #FF0073;
+        box-shadow: inset 10px 10px 28px #a6004b,
+            inset -10px -10px 28px #ff009b;
+        transform: translate(0px, -.2rem);
+    }
+
+    .filter form input[type=submit]:hover {
+        background: #FF0073;
+        box-shadow: inset 10px 10px 28px #a6004b,
+            inset -10px -10px 28px #ff009b;
+    }
+
+    /*--------------------------- Introduction --------------------------------*/
+    .introduction div,
+    .boardGames div {
+        width: 80vw;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .introduction img,
+    .boardGames img {
+        width: 20vw;
+        margin: 4rem 2rem 2rem 0;
+    }
+
+    .introduction article,
+    .boardGames article {
+        width: 50vw;
+    }
+
+    /*--------------------------- profile cards--------------------------------*/
+
+
+    .category-fit,
+    .category-boardgames {
+        width: 60vw;
+        margin: 0 auto;
+    }
+
+    .category-fit div,
+    .category-boardgames div {
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: visible;
+
+    }
+
+    .category-fit div article,
+    .category-boardgames div article {
+        margin: 2em 1em 2em 1em;
+
+    }
+
+    .category-fit h2,
+    .category-boardgames h2 {
+        margin: 1em 1em 0 1em;
+    }
+
+    .category-fit div article:hover,
+    .category-boardgames div article:hover {
+        background: #FF0073;
+        box-shadow: 10px 10px 30px #d9d9d9,
+            -10px -10px 30px #ffffff;
+        transform: translate(0px, -.3rem);
+    }
+
+
+}
+
+/* Responsive 1200px START*/
+@media all and (min-width: 1200px) {
+    .introduction div {
+        width: 60vw;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .introduction img {
+        width: 20vw;
+        margin: 4rem 2rem 2rem 0;
+    }
+
+    .introduction article {
+        width: 30vw;
+    }
+
+
+
 }
