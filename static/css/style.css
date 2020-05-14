@@ -253,8 +253,8 @@ section form div div input[type=checkbox] {
 
 .introduction img,
 .boardGames img {
-    width:80vw;
-    height:auto;
+    max-width:80vw;
+    max-height:20vh;
     margin: 2rem 0 0 0;
     border-radius:.5rem;
 }
