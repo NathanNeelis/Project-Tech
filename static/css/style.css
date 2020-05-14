@@ -246,15 +246,17 @@ section form div div input[type=checkbox] {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    align-items:flex-start;
     flex-wrap: wrap;
     margin: 2rem auto 4rem auto;
+    width:80vw;
+    /* background-color:yellow; */
 }
 
 
 .introduction img,
 .boardGames img {
-    max-width:80vw;
-    max-height:20vh;
+    width:60vw;
     margin: 2rem 0 0 0;
     border-radius:.5rem;
 }
@@ -262,6 +264,7 @@ section form div div input[type=checkbox] {
 .introduction article,
 .boardGames article {
     margin: 2rem;
+    width:80vw;
 }
 
 .introduction article h2,
@@ -471,18 +474,21 @@ footer {
 
 /* Responsive 1200px START*/
 @media all and (min-width: 1200px) {
-    .introduction div {
+    .introduction div,
+    .boardGames div {
         width: 60vw;
         justify-content: flex-start;
         align-items: flex-start;
     }
 
-    .introduction img {
+    .introduction img,
+    .boardGames img {
         width: 20vw;
         margin: 4rem 2rem 2rem 0;
     }
 
-    .introduction article {
+    .introduction article,
+    .boardGames article {
         width: 30vw;
     }
 
