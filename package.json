@@ -19,6 +19,7 @@
   "homepage": "https://github.com/NathanNeelis/Project-Tech#readme",
   "dependencies": {
     "camelcase": "^6.0.0",
+    "ejs": "^3.1.2",
     "express": "^4.17.1"
   },
   "devDependencies": {

@@ -230,19 +230,22 @@ section form div div input[type=checkbox] {
 }
 
 .introduction article p,
-.boardGames article p {
+.boardGames article p,
+.comics article p {
     color: white;
     margin-bottom: 2rem;
 }
 
 
 .introduction h2,
-.boardGames h2  {
+.boardGames h2,
+.comics h2  {
     color: white;
 }
 
 .introduction div,
-.boardGames div {
+.boardGames div,
+.comics div {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -255,20 +258,23 @@ section form div div input[type=checkbox] {
 
 
 .introduction img,
-.boardGames img {
+.boardGames img,
+.comics img {
     width:60vw;
     margin: 2rem 0 0 0;
     border-radius:.5rem;
 }
 
 .introduction article,
-.boardGames article {
+.boardGames article, 
+.comics article {
     margin: 2rem;
     width:80vw;
 }
 
 .introduction article h2,
-.boardGames article h2 {
+.boardGames article h2,
+.comics article h2 {
     margin: 1rem 0 1rem 0;
 }
 
@@ -280,23 +286,29 @@ section form div div input[type=checkbox] {
 
 }
 
+.comics {
+    background-color: #32DCB4; 
+}
 
 /*--------------------------- Card profiles --------------------------------*/
 /*--------------------------- Card profiles --------------------------------*/
 /*--------------------------- Card profiles --------------------------------*/
 .category-fit,
-.category-boardgames {
+.category-boardgames,
+.categoryComics {
     width: 100vw;
     margin: 0 auto;
 }
 
 .category-fit h2,
-.category-boardgames h2 {
+.category-boardgames h2,
+.categoryComics h2 {
     margin: 1em 12.5vw 0 12.5vw;
 }
 
 .category-fit div,
-.category-boardgames div {
+.category-boardgames div,
+.categoryComics div {
     /* display: flex;
     justify-content: center;
     flex-direction: row;
@@ -307,13 +319,15 @@ section form div div input[type=checkbox] {
 }
 
 .category-fit img,
-.category-boardgames img {
+.category-boardgames img,
+.categoryComics img {
     border-radius: .9em .9em 0em 0em;
     width: 12em;
 }
 
 .category-fit div article,
-.category-boardgames div article {
+.category-boardgames div article,
+.categoryComics div article {
     margin: 2em 10vw 4em 12.5vw;
     border-radius: 1em;
     background: #32DCB4;
@@ -331,14 +345,16 @@ section form div div input[type=checkbox] {
 
 
 .category-fit div article h4,
-.category-boardgames div article h4 {
+.category-boardgames div article h4,
+.categoryComics div article h4 {
     padding: .5em 1em 0em 1em;
     color: white;
 
 }
 
 .category-fit div article p,
-.category-boardgames div article p {
+.category-boardgames div article p,
+.categoryComics div article p {
     padding: 0em 1em .5em 1em;
     color: white;
 }
@@ -413,20 +429,23 @@ footer {
 
     /*--------------------------- Introduction --------------------------------*/
     .introduction div,
-    .boardGames div {
+    .boardGames div,
+    .comics div {
         width: 80vw;
         justify-content: center;
         align-items: flex-start;
     }
 
     .introduction img,
-    .boardGames img {
+    .boardGames img,
+    .comics img {
         width: 20vw;
         margin: 4rem 2rem 2rem 0;
     }
 
     .introduction article,
-    .boardGames article {
+    .boardGames article, 
+    .comics article {
         width: 50vw;
     }
 
@@ -434,13 +453,15 @@ footer {
 
 
     .category-fit,
-    .category-boardgames {
+    .category-boardgames,
+    .categoryComics {
         width: 60vw;
         margin: 0 auto;
     }
 
     .category-fit div,
-    .category-boardgames div {
+    .category-boardgames div,
+    .categoryComics div {
         display: flex;
         justify-content: flex-start;
         align-content: flex-start;
@@ -451,18 +472,21 @@ footer {
     }
 
     .category-fit div article,
-    .category-boardgames div article {
+    .category-boardgames div article, 
+    .categoryComics div article {
         margin: 2em 1em 2em 1em;
 
     }
 
     .category-fit h2,
-    .category-boardgames h2 {
+    .category-boardgames h2,
+    .categoryComics h2 {
         margin: 1em 1em 0 1em;
     }
 
     .category-fit div article:hover,
-    .category-boardgames div article:hover {
+    .category-boardgames div article:hover,
+    .categoryComics div article:hover {
         background: #FF0073;
         box-shadow: 10px 10px 30px #d9d9d9,
             -10px -10px 30px #ffffff;
@@ -475,20 +499,23 @@ footer {
 /* Responsive 1200px START*/
 @media all and (min-width: 1200px) {
     .introduction div,
-    .boardGames div {
+    .boardGames div,
+    .comics div {
         width: 60vw;
         justify-content: flex-start;
         align-items: flex-start;
     }
 
     .introduction img,
-    .boardGames img {
+    .boardGames img,
+    .comics img {
         width: 20vw;
         margin: 4rem 2rem 2rem 0;
     }
 
     .introduction article,
-    .boardGames article {
+    .boardGames article,
+    .comics article {
         width: 30vw;
     }
 
