@@ -56,7 +56,7 @@ app.get('/mp3', function (req, res) {
   // res.sendFile(__dirname + '/static/mp3/gelukt.mp3')
 })
 
-// Source: !!
+// Resource: !!
 // stackoverflow, & Hulha, r. (2011, 23 maart). Why isn’t express-js setting the Content-Type header? 
 // Geraadpleegd op 14 mei 2020, van https://stackoverflow.com/questions/5400761/why-isnt-express-js-setting-the-content-type-header
 
@@ -64,7 +64,7 @@ app.get('/search/:userId/profile/:profileId', function (req, res) {
   res.send(req.params)
 })
 
-// Source: !!
+// Resource: !!
 // Express. (2017?). Express routing. Geraadpleegd op 14 mei 2020, van https://expressjs.com/en/guide/routing.html
 
 
