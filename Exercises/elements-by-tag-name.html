@@ -13,27 +13,45 @@
 
     <script>
         function byTagName(node, tagName) {
-            let array = Array.from(document.body.getElementsByTagName(tagName));
-            if (node.nodeType == node.ELEMENT_NODE) {
-                for (let i = 0; i < node.childNodes.length; i++) {
-                    if (byTagName(node.childNodes[i], tagName)) {
+            let array = [];
+            tagName = tagName.toUpperCase();
+            // console.log(tagName);
 
+            // goede code
+            function validate(node) {
+                for (let i = 0; i < node.childNodes.length; i++) {
+                    let child = node.childNodes[i];
+                    if (child.nodeType == document.ELEMENT_NODE) {
+                        if (child.nodeName == tagName) {
+                            array.push(child);
+                            console.log(child);
+                        }
+                        validate(child);
                     }
                 }
             }
+            validate(node);
+            return array;
+
+            // mijn eerste poging. Ik vergeet het aanmaken van een variable.
+            // function validate(node) {
+            //     for (let i = 0; i < node.childNodes.length; i++){
+            //         // let child = node.childNodes[i]; 
+            //         if(node.childNodes[i].nodeType == node.ELEMENT_NODE){
+            //             if(node.childNodes[i].nodeName == tagName){
+            //                 array.push(node.childNodes[i]);
+            //             }
+            //             validate(node.childNodes[i]);
+            //         }
+            //     }
+
+            // }
+
+
         }
 
-        //        code Bjorn - NIET GOED geen query selector gebruiken
-        //        function byTagName(node, tagName) {
-        //
-        //            if (node.nodeType == Node.ELEMENT_NODE) {
-        //                let tagFilter = node.querySelectorAll(tagName);
-        //                let = tagFilterContent = tagFilter.length
-        //
-        //                return tagFilterContent;
-        //            }
-        //
-        //        }
+
+
 
 
         console.log(byTagName(document.body, "h1").length);
@@ -43,7 +61,6 @@
         let para = document.querySelector("p");
         console.log(byTagName(para, "span").length);
         // → 2
-
     </script>
 </body>
 
