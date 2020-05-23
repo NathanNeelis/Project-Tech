@@ -3,90 +3,19 @@
     <!-- this is data that is defined in the index.js data structure -->
     <div>
         <!--       Category 1   Results        -->
+        <% for (let i = 0; i < data.length; i++) { %>
         <article>
             <a href="profile-nathan.html">
                 <img src="images/nathan.JPG" alt="Profile photo Nathan">
-                <h4><%= data[0].profileId %> • <%= data[0].age %></h4>
-                <p><%= data[0].location %></p>
+                <h4>
+                    <%= data[i].profileId %> • <%= data[i].age %>
+                </h4>
+                <p>
+                    <%= data[i].location %>
+                </p>
             </a>
         </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan2.JPG" alt="Profile photo Nathan">
-                <h4><%= data[1].profileId %> • <%= data[1].age %></h4>
-                <p><%= data[1].location %></p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan2.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan2.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan2.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan2.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
-        <article>
-            <a href="profile-nathan.html">
-                <img src="images/nathan2.JPG" alt="Profile photo Nathan">
-                <h4>Nathan • 29</h4>
-                <p>Alkmaar</p>
-            </a>
-        </article>
+        <% } %>
     </div>
 
 </section>
