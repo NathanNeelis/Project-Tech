@@ -40,17 +40,20 @@ function notFound(req, res) {
 
 //Home function
 function home(req, res) {
-  res.render("index.ejs", { data: data });
+  res.render("index.ejs", {
+    data: data
+  });
 }
 
 //search function
 function search(req, res) {
-  res.render("search.ejs", { data: data });
+  res.render("search.ejs", {
+    data: data
+  });
 }
 
 // data set
-var data = [
-  {
+var data = [{
     profileId: "Nathan",
     firstname: "Nathan",
     lastname: "Neelis",
@@ -64,8 +67,7 @@ var data = [
       "Food",
       "DnD",
     ],
-    description:
-      "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
   },
   {
     profileId: "Nathan",
@@ -74,8 +76,7 @@ var data = [
     age: 21,
     location: "Amsterdam",
     interests: ["Beer", "Drinking games", "Comics", "Netflix", "Food", "DnD"],
-    description:
-      "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
   },
   {
     profileId: "Suzanne",
@@ -91,8 +92,7 @@ var data = [
       "Food",
       "DnD",
     ],
-    description:
-      "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
   },
   {
     profileId: "Suzanne",
@@ -108,7 +108,6 @@ var data = [
       "Food",
       "DnD",
     ],
-    description:
-      "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
   },
 ];
