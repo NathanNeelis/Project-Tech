@@ -276,6 +276,38 @@ form textarea {
     z-index: -1;
 }
 
+form input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.pictureLabel {
+    margin: 2rem 0 3rem 0;
+    padding: 1rem;
+    border: 0 solid white;
+    width: 50%;
+    border-radius: .5rem;
+    background: #FF0073;
+    box-shadow: 10px 10px 28px #a6004b,
+        -10px -10px 28px #ff009b;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+
+}
+
+.pictureLabel:hover {
+    background: #FF0073;
+    box-shadow: inset 10px 10px 28px #a6004b,
+        inset -10px -10px 28px #ff009b;
+
+}
+
 
 
 /*--------------------------- Introduction --------------------------------*/

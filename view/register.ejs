@@ -5,7 +5,7 @@
     <main>
         <section class="register">
             <div>
-                <form action=/ method=post>
+                <form action=/ method=post enctype="multipart/form-data">
                     <fieldset>
                         <legend>Register</legend>
                         <label for="profileId">What is your username?</label>
@@ -23,6 +23,8 @@
                             placeholder="Mountainbike, Movies, Swimming, Gaming, Board games."></textarea>
                         <label for="description">Tell us about yourself</label>
                         <textarea name="description" id="description" placeholder="What makes you special?"></textarea>
+                        <label for="profilePicture" class="pictureLabel">Upload your photo!</label>
+                        <input type="file" name="profilePicture" id="profilePicture" accept="image/*">
 
                         <input type="submit" value="Register" id="userRegister">
                         <label for="userRegister"><span class="registerUser">Register</span></label>

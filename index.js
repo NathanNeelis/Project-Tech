@@ -2,7 +2,12 @@ const express = require("express"); // load express package
 const bodyParser = require("body-parser"); // load body parser for http requests
 const slug = require("slug");
 const app = express();
+const multer = require("multer");
 const port = 3000; // browser adress
+var upload = multer({
+  dest: "static/upload/"
+});
+
 
 
 // data set
@@ -39,7 +44,7 @@ app.use(express.static(__dirname + "/static"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.post("/", add);
+app.post("/", upload.single('profilePicture'), add);
 app.get("/", home); // Routing
 app.get("/search", search); // Routing
 app.get("/register", register); // Routing
@@ -49,6 +54,7 @@ app.use(notFound);
 app.listen(port, function () {
   return console.log("Server is working!"); // sends a confirmation that the server works.
 });
+
 
 
 function notFound(req, res) {
@@ -85,7 +91,8 @@ function add(req, res) {
     age: req.body.age,
     location: req.body.location,
     interests: interestsArray,
-    description: req.body.description
+    description: req.body.description,
+    profilePicture: req.file ? req.file.filename : null
   });
   console.log(data.length);
   console.log(data);
