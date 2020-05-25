@@ -44,16 +44,18 @@ function search(req, res) {
 }
 
 function add(req, res) {
-  let id = slug(req.body.profileID).toLowerCase();
+  let id = slug(req.body.profileId).toLowerCase();
 
-  data.push({
+  data.push(new Object({
     id: id,
-    profileId: req.body.profileID,
+    profileId: req.body.profileId,
     firstname: req.body.firstname,
     lastname: req.body.lastname
-  });
+  }));
 
-  res.redirect("/" + id);
+
+  // res.redirect("/" + id);
+  res.render("index.ejs");
 }
 
 // data set
