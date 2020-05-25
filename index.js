@@ -4,6 +4,36 @@ const slug = require("slug");
 const app = express();
 const port = 3000; // browser adress
 
+
+// data set
+let data = [{
+    profileId: "Nathan",
+    firstname: "Nathan",
+    lastname: "Neelis",
+    age: 29,
+    location: "Alkmaar",
+    interests: [
+      "Mountainbike",
+      "Board games",
+      "Comics",
+      "Movies",
+      "Food",
+      "DnD",
+    ],
+    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+  },
+  {
+    profileId: "Nathan",
+    firstname: "Nathan",
+    lastname: "Student",
+    age: 21,
+    location: "Amsterdam",
+    interests: ["Beer", "Drinking games", "Comics", "Netflix", "Food", "DnD"],
+    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+  }
+
+];
+
 // Routing
 app.use(express.static(__dirname + "/static"));
 app.use(bodyParser.urlencoded({
@@ -45,44 +75,19 @@ function search(req, res) {
 
 function add(req, res) {
   let id = slug(req.body.profileId).toLowerCase();
-
-  data.push(new Object({
-    id: id,
-    profileId: req.body.profileId,
+  console.log(data.length)
+  data.push({
+    profileId: id,
     firstname: req.body.firstname,
-    lastname: req.body.lastname
-  }));
-
+    lastname: req.body.lastname,
+    age: req.body.age,
+    location: req.body.location,
+    interests: req.body.interests,
+    description: req.body.description
+  });
+  console.log(data.length);
+  console.log(data);
 
   // res.redirect("/" + id);
   res.render("index.ejs");
 }
-
-// data set
-let data = [{
-    profileId: "Nathan",
-    firstname: "Nathan",
-    lastname: "Neelis",
-    age: 29,
-    location: "Alkmaar",
-    interests: [
-      "Mountainbike",
-      "Board games",
-      "Comics",
-      "Movies",
-      "Food",
-      "DnD",
-    ],
-    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
-  },
-  {
-    profileId: "Nathan",
-    firstname: "Nathan",
-    lastname: "Student",
-    age: 21,
-    location: "Amsterdam",
-    interests: ["Beer", "Drinking games", "Comics", "Netflix", "Food", "DnD"],
-    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
-  },
-
-];
