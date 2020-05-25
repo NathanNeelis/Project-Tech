@@ -102,7 +102,7 @@ function add(req, res) {
     location: req.body.location,
     interests: interestsArray,
     description: req.body.description,
-    profilePicture: req.file ? req.file.filename : null // not working yet !
+    profilePicture: req.file ? req.file.filename : null // zet alles na de ? uit, dan krijg je een data object. Daar kan je meer mee.
   });
   console.log(data.length);
   console.log(data);
