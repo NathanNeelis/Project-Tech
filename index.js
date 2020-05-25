@@ -75,6 +75,8 @@ function search(req, res) {
 
 function add(req, res) {
   let id = slug(req.body.profileId).toLowerCase();
+  let interestsArray = req.body.interests.split(", ");
+
   console.log(data.length)
   data.push({
     profileId: id,
@@ -82,7 +84,7 @@ function add(req, res) {
     lastname: req.body.lastname,
     age: req.body.age,
     location: req.body.location,
-    interests: req.body.interests,
+    interests: interestsArray,
     description: req.body.description
   });
   console.log(data.length);
