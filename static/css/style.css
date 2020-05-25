@@ -93,10 +93,10 @@ a {
 
 }
 
-.filterButton:hover{
-    color:white;
+.filterButton:hover {
+    color: white;
     box-shadow: 10px 10px 30px #a7a7a7,
-    -10px -10px 30px #e1e1e1;
+        -10px -10px 30px #e1e1e1;
 }
 
 /*--------------------------- Filter function --------------------------------*/
@@ -118,7 +118,7 @@ fieldset {
 }
 
 fieldset:first-of-type {
-    margin-bottom:3rem;
+    margin-bottom: 3rem;
 }
 
 legend {
@@ -220,6 +220,64 @@ section form div div input[type=checkbox] {
     z-index: -1;
 }
 
+/*--------------------------- Register --------------------------------*/
+/*--------------------------- Register --------------------------------*/
+/*--------------------------- Register --------------------------------*/
+.register {
+    background-color: #FF0073;
+}
+
+.register div:first-of-type {
+    width: 85vw;
+    margin: 0 auto;
+    padding: 2rem 0 0 0;
+}
+
+form input[type=number] {
+    padding: 1rem;
+    border-width: .1rem;
+    border-style: solid;
+    border-color: white;
+    border-radius: .5rem;
+    width: 80vw;
+    margin: .5rem 0 1rem 0;
+}
+
+form textarea {
+    padding: 1rem;
+    border-width: .1rem;
+    border-style: solid;
+    border-color: white;
+    border-radius: .5rem;
+    width: 80vw;
+    margin: .5rem 0 1rem 0;
+}
+
+.register form input[type=submit] {
+    display: block;
+    margin: 2rem 0 2rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    -webkit-appearance: none;
+    border: 0 solid white;
+    background: #FF0073;
+    box-shadow: 10px 10px 28px #a6004b,
+        -10px -10px 28px #ff009b;
+    color: white;
+    width: 8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    transition: all 1s ease;
+
+}
+
+.registerUser {
+    position: absolute;
+    z-index: -1;
+}
+
+
+
 /*--------------------------- Introduction --------------------------------*/
 /*--------------------------- Introduction --------------------------------*/
 /*--------------------------- Introduction --------------------------------*/
@@ -239,7 +297,7 @@ section form div div input[type=checkbox] {
 
 .introduction h2,
 .boardGames h2,
-.comics h2  {
+.comics h2 {
     color: white;
 }
 
@@ -249,10 +307,10 @@ section form div div input[type=checkbox] {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    align-items:flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
     margin: 2rem auto 4rem auto;
-    width:80vw;
+    width: 80vw;
     /* background-color:yellow; */
 }
 
@@ -260,16 +318,16 @@ section form div div input[type=checkbox] {
 .introduction img,
 .boardGames img,
 .comics img {
-    width:60vw;
+    width: 60vw;
     margin: 2rem 0 0 0;
-    border-radius:.5rem;
+    border-radius: .5rem;
 }
 
 .introduction article,
-.boardGames article, 
+.boardGames article,
 .comics article {
     margin: 2rem;
-    width:80vw;
+    width: 80vw;
 }
 
 .introduction article h2,
@@ -287,7 +345,7 @@ section form div div input[type=checkbox] {
 }
 
 .comics {
-    background-color: #32DCB4; 
+    background-color: #32DCB4;
 }
 
 /*--------------------------- Card profiles --------------------------------*/
@@ -339,8 +397,8 @@ section form div div input[type=checkbox] {
 
 }
 
-.category-fit div article{
-    background-color:#0099D1;
+.category-fit div article {
+    background-color: #0099D1;
 }
 
 
@@ -427,6 +485,28 @@ footer {
             inset -10px -10px 28px #ff009b;
     }
 
+    /*--------------------------- Register --------------------------------*/
+
+    .register div:first-of-type {
+        width: 40vw;
+        margin: 0 auto;
+
+    }
+
+    form input[type=number] {
+        width: 100%;
+    }
+
+    form textarea {
+        width: 100%;
+    }
+
+    .register form input[type=submit]:hover {
+        background: #FF0073;
+        box-shadow: inset 10px 10px 28px #a6004b,
+            inset -10px -10px 28px #ff009b;
+    }
+
     /*--------------------------- Introduction --------------------------------*/
     .introduction div,
     .boardGames div,
@@ -444,7 +524,7 @@ footer {
     }
 
     .introduction article,
-    .boardGames article, 
+    .boardGames article,
     .comics article {
         width: 50vw;
     }
@@ -472,7 +552,7 @@ footer {
     }
 
     .category-fit div article,
-    .category-boardgames div article, 
+    .category-boardgames div article,
     .categoryComics div article {
         margin: 2em 1em 2em 1em;
 
@@ -498,6 +578,7 @@ footer {
 
 /* Responsive 1200px START*/
 @media all and (min-width: 1200px) {
+
     .introduction div,
     .boardGames div,
     .comics div {
