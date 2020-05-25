@@ -43,13 +43,12 @@ function search(req, res) {
   });
 }
 
-
 function add(req, res) {
-  let id = slug(req.body.profileId).toLowerCase();
+  let id = slug(req.body.profileID).toLowerCase();
 
   data.push({
     id: id,
-    profileId: req.body.profileId,
+    profileId: req.body.profileID,
     firstname: req.body.firstname,
     lastname: req.body.lastname
   });
@@ -57,10 +56,8 @@ function add(req, res) {
   res.redirect("/" + id);
 }
 
-
-
 // data set
-var data = [{
+let data = [{
     profileId: "Nathan",
     firstname: "Nathan",
     lastname: "Neelis",
@@ -85,36 +82,5 @@ var data = [{
     interests: ["Beer", "Drinking games", "Comics", "Netflix", "Food", "DnD"],
     description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
   },
-  {
-    profileId: "Suzanne",
-    firstname: "Suus",
-    lastname: "Suusje",
-    age: 28,
-    location: "Amsterdam",
-    interests: [
-      "Mountainbike",
-      "Board games",
-      "Comics",
-      "Movies",
-      "Food",
-      "DnD",
-    ],
-    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
-  },
-  {
-    profileId: "Suzanne",
-    firstname: "Suus",
-    lastname: "Suusje",
-    age: 28,
-    location: "Amsterdam",
-    interests: [
-      "Mountainbike",
-      "Board games",
-      "Comics",
-      "Movies",
-      "Food",
-      "DnD",
-    ],
-    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
-  },
+
 ];
