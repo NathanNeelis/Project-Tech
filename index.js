@@ -4,10 +4,18 @@ const slug = require("slug");
 const app = express();
 const multer = require("multer");
 const port = 3000; // browser adress
-var upload = multer({
-  dest: "static/upload/"
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "static/uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + ".jpg"); //Appending .jpg
+  }
 });
 
+const upload = multer({
+  storage: storage
+});
 
 
 // data set
@@ -26,6 +34,7 @@ let data = [{
       "DnD",
     ],
     description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+    profilePicture: "nathan.JPG"
   },
   {
     profileId: "Nathan",
@@ -35,6 +44,7 @@ let data = [{
     location: "Amsterdam",
     interests: ["Beer", "Drinking games", "Comics", "Netflix", "Food", "DnD"],
     description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
+    profilePicture: "nathan.JPG"
   }
 
 ];
