@@ -1,39 +1,25 @@
-// run script testing
-const test = "NPM script test";
-console.log(test); // testing
-
-// NPM packages
-const camelCase = require("camelcase");
-console.log(camelCase("hello-world"));
-
-// Serve
 const express = require("express"); // load express package
+const bodyParser = require("body-parser"); // load body parser for http requests
+const slug = require("slug");
 const app = express();
 const port = 3000; // browser adress
 
 // Routing
 app.use(express.static(__dirname + "/static"));
-app.get("/", home);
-app.get("/search", search);
-app.get("/register", register)
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.post("/", add);
+app.get("/", home); // Routing
+app.get("/search", search); // Routing
+app.get("/register", register); // Routing
 app.set("view engine", "ejs"); // Templating
 app.set("views", "view"); // Templating
 app.use(notFound);
-// query exercise
-app.get("/mp3", function (req, res) {
-  res.type("audio/mp3");
-  res.sendFile(__dirname + "/static/mp3/gelukt.mp3");
-  // res.header("Content-Type", "audio/mp3");
-  // res.sendFile(__dirname + '/static/mp3/gelukt.mp3')
-});
-app.get("/search/:userId/profile/:profileId", function (req, res) {
-  res.send(req.params);
-});
 app.listen(port, function () {
   return console.log("Server is working!"); // sends a confirmation that the server works.
 });
 
-// 404 error not working
 
 function notFound(req, res) {
   res.status(404).send("404 page");
@@ -48,17 +34,30 @@ function home(req, res) {
 
 //Register function
 function register(req, res) {
-  res.render("register.ejs", {
-    data: data
-  });
+  res.render("register.ejs");
 }
-
 //search function
 function search(req, res) {
   res.render("search.ejs", {
     data: data
   });
 }
+
+
+function add(req, res) {
+  let id = slug(req.body.profileId).toLowerCase();
+
+  data.push({
+    id: id,
+    profileId: req.body.profileId,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname
+  });
+
+  res.redirect("/" + id);
+}
+
+
 
 // data set
 var data = [{
