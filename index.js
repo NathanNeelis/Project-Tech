@@ -15,6 +15,7 @@ const port = 3000; // browser adress
 app.use(express.static(__dirname + "/static"));
 app.get("/", home);
 app.get("/search", search);
+app.get("/register", register)
 app.set("view engine", "ejs"); // Templating
 app.set("views", "view"); // Templating
 app.use(notFound);
@@ -41,6 +42,13 @@ function notFound(req, res) {
 //Home function
 function home(req, res) {
   res.render("index.ejs", {
+    data: data
+  });
+}
+
+//Register function
+function register(req, res) {
+  res.render("register.ejs", {
     data: data
   });
 }

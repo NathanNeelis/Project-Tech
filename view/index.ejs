@@ -1,35 +1,13 @@
-
-
 <%- include('includes/head.ejs'); %>
+
 <body>
-    <%- include('includes/header.ejs'); %>
-    <main>
-        <% if (data[0].interests[0] == 'Mountainbike') { %>
-            <%- include('includes/hello-user.ejs'); %>
-          <% } else{ %>
-            <%- include('includes/introduction.ejs'); %>
-          <% } %>
-
-
-        <!-- For loop.. not really working -->
-                        <!-- <% for(var i=0; i < data.length; i++) { %>
-                            <% if (data[i].interests[0] == 'Mountainbike') { %>
-                                <%- include('includes/hello-user.ejs'); %>
-                                <% } else{ %>
-                                <%- include('includes/introduction.ejs'); %>
-                                <% } %> 
-                        <% } %> -->
-        <!-- End forloop -->
-
-        <!-- Source: https://stackoverflow.com/questions/22952044/loop-through-json-in-ejs -->
-
-          <!-- <%- include('includes/introduction.ejs'); %>      -->
-        <%- include('includes/section_fit.ejs'); %>
-        <%- include('includes/section_boardgames.ejs'); %>
-        <%- include('includes/section_comics.ejs'); %>
-    </main>
-    <%- include('includes/footer.ejs'); %>
-    <%- include('includes/scripts.ejs'); %>
+  <%- include('includes/header.ejs'); %>
+  <main>
+    <%- include('includes/introduction.ejs'); %>
+    <%- include('includes/section_fit.ejs'); %>
+    <%- include('includes/section_boardgames.ejs'); %>
+    <%- include('includes/section_comics.ejs'); %>
+  </main>
+  <%- include('includes/footer.ejs'); %>
+  <%- include('includes/scripts.ejs'); %>
 </body>
-
-
