@@ -9,7 +9,13 @@ const storage = multer.diskStorage({
     cb(null, "static/uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + ".jpg"); //Appending .jpg
+    console.log(file.mimetype);
+    if (file.mimetype == "image/png") {
+      cb(null, Date.now() + ".png"); //Appending .jpg
+    } else if (file.mimetype == "image.jpg") {
+      cb(null, Date.now() + ".jpg"); //Appending .jpg
+    }
+
   }
 });
 
