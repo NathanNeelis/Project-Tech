@@ -92,7 +92,7 @@ function add(req, res) {
     location: req.body.location,
     interests: interestsArray,
     description: req.body.description,
-    profilePicture: req.file ? req.file.filename : null
+    profilePicture: req.file ? req.file.filename : null // not working yet !
   });
   console.log(data.length);
   console.log(data);
