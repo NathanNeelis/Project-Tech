@@ -1,8 +1,11 @@
+/* eslint-disable */
+
 const express = require("express"); // load express package
 const bodyParser = require("body-parser"); // load body parser for http requests
 const slug = require("slug");
 const app = express();
 const multer = require("multer");
+const mongo = require("mongodb");
 const port = 3000; // browser adress
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -18,9 +21,24 @@ const storage = multer.diskStorage({
 
   }
 });
-
 const upload = multer({
   storage: storage
+});
+
+require('dotenv').config()
+// poging 4
+// database connection
+var db = null;
+var url = "mongodb+srv://" + process.env.DB_HOST + ":" + process.env.DB_PORT;
+
+mongo.MongoClient.connect(url, function (err, client) {
+  if (err) {
+    throw err;
+  }
+
+  db = client.db(process.env.DB_NAME);
+  console.log("Connected correctly to MongoDB server");
+  console.log(process.env.DB_NAME);
 });
 
 
@@ -60,7 +78,7 @@ app.use(express.static(__dirname + "/static"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.post("/", upload.single('profilePicture'), add);
+app.post("/", upload.single("profilePicture"), add);
 app.get("/", home); // Routing
 app.get("/search", search); // Routing
 app.get("/register", register); // Routing
@@ -99,7 +117,7 @@ function add(req, res) {
   let id = slug(req.body.profileId).toLowerCase();
   let interestsArray = req.body.interests.split(", ");
 
-  console.log(data.length)
+  console.log(data.length);
   data.push({
     profileId: id,
     firstname: req.body.firstname,
