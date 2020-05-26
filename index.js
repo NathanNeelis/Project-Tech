@@ -29,7 +29,7 @@ require('dotenv').config()
 // poging 4
 // database connection
 var db = null;
-var url = "mongodb+srv://" + process.env.DB_HOST + ":" + process.env.DB_PORT;
+var url = "mongodb+srv://" + process.env.DB_HOST;
 
 mongo.MongoClient.connect(url, function (err, client) {
   if (err) {
@@ -41,37 +41,6 @@ mongo.MongoClient.connect(url, function (err, client) {
   console.log(process.env.DB_NAME);
 });
 
-
-// data set
-let data = [{
-    profileId: "Nathan",
-    firstname: "Nathan",
-    lastname: "Neelis",
-    age: 29,
-    location: "Alkmaar",
-    interests: [
-      "Mountainbike",
-      "Board games",
-      "Comics",
-      "Movies",
-      "Food",
-      "DnD",
-    ],
-    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
-    profilePicture: "nathan.JPG"
-  },
-  {
-    profileId: "Nathan",
-    firstname: "Nathan",
-    lastname: "Student",
-    age: 21,
-    location: "Amsterdam",
-    interests: ["Beer", "Drinking games", "Comics", "Netflix", "Food", "DnD"],
-    description: "Hi! I like to meet someone that wants to join me for a ride at the mountainbike track in Alkmaar. I also am interested in playing board games, DnD and I like to read comics or watch movies. I also really like food, so want to grab a bite?",
-    profilePicture: "nathan.JPG"
-  }
-
-];
 
 // Routing
 app.use(express.static(__dirname + "/static"));
@@ -96,10 +65,18 @@ function notFound(req, res) {
 }
 
 //Home function
-function home(req, res) {
-  res.render("index.ejs", {
-    data: data
-  });
+function home(req, res, next) {
+  db.collection("friendshipData").find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.render("index.ejs", {
+        data: data
+      });
+    }
+  }
 }
 
 //Register function
@@ -107,18 +84,32 @@ function register(req, res) {
   res.render("register.ejs");
 }
 //search function
-function search(req, res) {
-  res.render("search.ejs", {
-    data: data
-  });
+// function search(req, res) {
+//   res.render("search.ejs", {
+//     data: data
+//   });
+// }
+function search(req, res, next) {
+  db.collection("friendshipData").find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.render("search.ejs", {
+        data: data
+      });
+    }
+  }
 }
 
-function add(req, res) {
+
+function add(req, res, next) {
   let id = slug(req.body.profileId).toLowerCase();
   let interestsArray = req.body.interests.split(", ");
 
-  console.log(data.length);
-  data.push({
+  // console.log(data.length);
+  db.collection("friendshipData").insertOne({
     profileId: id,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
@@ -127,10 +118,16 @@ function add(req, res) {
     interests: interestsArray,
     description: req.body.description,
     profilePicture: req.file ? req.file.filename : null // zet alles na de ? uit, dan krijg je een data object. Daar kan je meer mee.
-  });
-  console.log(data.length);
-  console.log(data);
-
+  }, done);
+  // console.log(data.length);
+  // console.log(data);
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.render("search.ejs");
+    }
+  }
   // res.redirect("/" + id);
-  res.render("index.ejs");
+
 }
