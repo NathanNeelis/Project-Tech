@@ -7,15 +7,15 @@ const app = express();
 const multer = require("multer");
 const mongo = require("mongodb");
 const port = 3000; // browser adress
-const storage = multer.diskStorage({
+const storage = multer.diskStorage({ // This adds a name and extension to the uploaded file.
   destination: function (req, file, cb) {
-    cb(null, "static/uploads/");
+    cb(null, "static/uploads/"); // location where the uploaded file needs to be stored
   },
   filename: function (req, file, cb) {
     console.log(file.mimetype);
-    if (file.mimetype == "image/png") {
-      cb(null, Date.now() + ".png"); //Appending .jpg
-    } else if (file.mimetype == "image.jpg") {
+    if (file.mimetype == "image/png") { // checks the mimetype 
+      cb(null, Date.now() + ".png"); //Appending .png
+    } else if (file.mimetype == "image.jpg") { // checks the mimetype 
       cb(null, Date.now() + ".jpg"); //Appending .jpg
     }
 
@@ -61,12 +61,12 @@ app.listen(port, function () {
 });
 
 
-
+// 404 error -> still need to make a page for this.
 function notFound(req, res) {
   res.status(404).send("404 page");
 }
 
-//Home function
+//Home page
 function home(req, res, next) {
   db.collection("friendshipData").find().toArray(done);
 
@@ -85,12 +85,8 @@ function home(req, res, next) {
 function register(req, res) {
   res.render("register.ejs");
 }
-//search function
-// function search(req, res) {
-//   res.render("search.ejs", {
-//     data: data
-//   });
-// }
+
+// search page
 function search(req, res, next) {
   db.collection("friendshipData").find().toArray(done);
 
@@ -105,7 +101,7 @@ function search(req, res, next) {
   }
 }
 
-
+// register data to database
 function add(req, res, next) {
   let id = slug(req.body.profileId).toLowerCase();
   let interestsArray = req.body.interests.split(", ");
@@ -121,8 +117,7 @@ function add(req, res, next) {
     description: req.body.description,
     profilePicture: req.file ? req.file.filename : null // zet alles na de ? uit, dan krijg je een data object. Daar kan je meer mee.
   }, done);
-  // console.log(data.length);
-  // console.log(data);
+
   function done(err, data) {
     if (err) {
       next(err);
