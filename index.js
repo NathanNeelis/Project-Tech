@@ -31,7 +31,9 @@ require('dotenv').config()
 var db = null;
 var url = "mongodb+srv://" + process.env.DB_HOST;
 
-mongo.MongoClient.connect(url, function (err, client) {
+mongo.MongoClient.connect(url, {
+  useUnifiedTopology: true
+}, function (err, client) {
   if (err) {
     throw err;
   }
