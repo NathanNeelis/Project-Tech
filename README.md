@@ -85,7 +85,8 @@ Thereby I am using prettier to make my code look prettier!
 My linter is a work in progress because this is the first time that I am using it.  
 Along the way, I might add more rules and update this readme.
 
-![Prettier](https://cdn.rawgit.com/prettier/prettier-logo/master/images/prettier-icon-light.svg)
+![Prettier](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
+![Prettier](https://media1.tenor.com/images/8499d1a678b3ec4ce365044239f7b2bf/tenor.gif)
 
 ## Dataflow
 
