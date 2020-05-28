@@ -99,6 +99,22 @@ a {
         -10px -10px 30px #e1e1e1;
 }
 
+.registerButton {
+    padding: .5rem 2rem;
+    background-color: #32DCB4;
+    border-radius: .5rem;
+    color: white;
+    margin: 2rem 0 0 0;
+    transition: all .5s ease;
+
+}
+
+.registerButton:hover {
+    color: white;
+    box-shadow: 10px 10px 30px #a7a7a7,
+        -10px -10px 30px #e1e1e1;
+}
+
 /*--------------------------- Filter function --------------------------------*/
 /*--------------------------- Filter function --------------------------------*/
 /*--------------------------- Filter function --------------------------------*/
@@ -449,6 +465,56 @@ form input[type=file] {
     color: white;
 }
 
+/*--------------------------- Profile page --------------------------------*/
+/*--------------------------- Profile page --------------------------------*/
+/*--------------------------- Profile page --------------------------------*/
+.profilePage {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.profilePage h1 {
+    margin: 2rem 0;
+    font-size: 2rem;
+}
+
+.profilePage article:first-of-type {
+    /* width: 40%; */
+    margin: 0 auto;
+}
+
+.profilePage article:first-of-type img {
+    width: 15rem;
+    border-radius: 1rem;
+}
+
+.personalInformation {
+    margin: 0 auto;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: .5rem;
+}
+
+.personalInformation dt {
+    font-weight: 700;
+}
+
+.personalInformation dd:last-child {
+    margin-bottom: 2rem;
+}
+
+.personalInformation dt,
+.personalInformation dd {
+    padding: .3rem 0em;
+}
+
 /*---------------------------  footer --------------------------------*/
 /*---------------------------  footer --------------------------------*/
 /*---------------------------  footer --------------------------------*/
@@ -605,6 +671,35 @@ footer {
         transform: translate(0px, -.3rem);
     }
 
+    /*--------------------------- profile cards--------------------------------*/
+
+    .profilePage {
+        width: 80vw;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .profilePage article:first-of-type {
+        width: 40%;
+        margin: 2rem auto;
+    }
+
+    .personalInformation {
+        width: 60%;
+        margin: 2rem auto;
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: .5rem;
+    }
+
+    .personalInformation dt,
+    .personalInformation dd {
+        padding: .3em 0em;
+    }
 
 }
 

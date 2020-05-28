@@ -1,0 +1,37 @@
+<%- include('includes/head.ejs'); %>
+
+<body>
+    <%- include('includes/header.ejs'); %>
+    <main>
+        <section class="profilePage">
+            <article>
+                <img src="uploads/<%= data.profilePicture %>" alt="Profile photo">
+            </article>
+            <article class="personalInformation">
+                <h1><%= data.firstname %> <%= data.lastname %></h1>
+                <div>
+                    <dl>
+                        <dt>Profile name </dt>
+                        <dd><%= data.profileId %></dd>
+                        <dt>Firstname</dt>
+                        <dd><%= data.firstname %></dd>
+                        <dt>Lastname </dt>
+                        <dd><%= data.lastname %></dd>
+                        <dt>Age</dt>
+                        <dd><%= data.age %></dd>
+                        <dt>Location</dt>
+                        <dd><%= data.location %></dd>
+                        <dt>Interests</dt>
+                        <dd><%= data.interests %></dd>
+                        <dt>Description</dt>
+                        <dd><%= data.description %></dd>
+                    </dl>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+    <%- include('includes/footer.ejs'); %>
+    <%- include('includes/scripts.ejs'); %>
+</body>

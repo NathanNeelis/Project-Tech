@@ -52,6 +52,7 @@ app.post("/", upload.single("profilePicture"), add);
 app.get("/", home); // Routing
 app.get("/search", search); // Routing
 app.get("/register", register); // Routing
+app.get('/:id', profile)
 app.set("view engine", "ejs"); // Templating
 app.set("views", "view"); // Templating
 app.use(notFound);
@@ -64,6 +65,38 @@ app.listen(port, function () {
 function notFound(req, res) {
   res.status(404).send("404 page");
 }
+
+
+data = [{
+  profileId: "nathan1990"
+}]
+
+
+function profile(req, res, next) {
+  db.collection("friendshipData").find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      for (var i = 0; i < data.length; i++) {
+
+        if (data[i].profileId === req.params.id) {
+          res.render("profile.ejs", {
+            data: data[i]
+          })
+
+        }
+      }
+    }
+  }
+}
+
+// Resource
+// code gelezen van Backend example + code van Bjorn Borgie gelezen
+
+
+
 
 //Home page
 function home(req, res, next) {
@@ -121,9 +154,8 @@ function add(req, res, next) {
     if (err) {
       next(err);
     } else {
-      res.render("search.ejs");
+      res.redirect("/" + id);
     }
   }
-  // res.redirect("/" + id);
 
 }
