@@ -26,7 +26,7 @@ To install all the packages registered in the package.json file run the code bel
 
     npm install  
 
-#### this will install the following packages:  
+#### This will install the following packages:  
 **Dependencies**  
 * body-parser 
 * camelcase
@@ -58,6 +58,7 @@ To make my life easier I installed a few extensions, they are listed below:
 
 #### Extensions
 * Material theme 
+* Material Icon theme
 * Bracket pair colorizer
 * Indent-rainbow
 * Auto Rename Tag
