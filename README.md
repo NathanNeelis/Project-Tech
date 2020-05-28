@@ -60,7 +60,7 @@ To install all the packages registered in the package.json file run the code bel
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [prettier](https://www.npmjs.com/package/prettier)
 
-#### Templating engine
+### Templating engine
 
 In my Friendship app, I made a lot of use of the templating engine EJS.  
 I choose to use EJS because of its documentation on how to get started.  
@@ -73,7 +73,7 @@ These pages are build out of includes. Smaller bits of code that you will find i
 
 ![EJS](https://i0.wp.com/frontnet.eu/wp-content/uploads/2020/04/Javascript_Embedded.png?w=526&ssl=1)
 
-#### Linter
+### Linter
 
 I choose to use ESlint to set up a few rules for coding:
 
@@ -85,7 +85,6 @@ Thereby I am using prettier to make my code look prettier!
 My linter is a work in progress because this is the first time that I am using it.  
 Along the way, I might add more rules and update this readme.
 
-![Prettier](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
 ![Prettier](https://media1.tenor.com/images/8499d1a678b3ec4ce365044239f7b2bf/tenor.gif)
 
 ## Dataflow
