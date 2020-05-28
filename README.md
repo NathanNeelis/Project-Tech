@@ -19,10 +19,16 @@ Friendship is a dating service, not meant for romantic relationships but for fri
 At this moment this is a work in progress.
 My goal is:
 
-- To create a working filter function;
-- a register form that creates users in a database; **check**
-- profile pages where you can update your interests;
-- dynamic pages that are rendered by templating and data from the database. **check**
+- The application is responsive **Must have**; **check**
+- To create a working filter function **Must have**;
+- a register form that creates users in a database **Could have**; **check**
+- User profiles **Must have**; **check**
+- To be able to update/change your user profile **Must have**;
+- The application should be accessible **Should have**;
+- The application is build according to the progressive enhancement theory **Must have**;
+- dynamic pages that are rendered by templating and data from the database **Must have**; **check**
+- It would be cool if user could login **Wont have**;
+- Users should be able to send messages to eachother **Wont have**;
 
 ## Getting started
 
