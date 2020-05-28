@@ -26,7 +26,6 @@ const upload = multer({
 });
 
 require('dotenv').config()
-// poging 4
 // database connection
 var db = null;
 var url = "mongodb+srv://" + process.env.DB_HOST;
