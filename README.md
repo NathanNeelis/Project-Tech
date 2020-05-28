@@ -6,7 +6,7 @@ Friendship is a dating service, not meant for romantic relationships but for fri
 
 ## Job story
 **When** I'm bored at home, at the beginning of the evening, watching cooking shows on Netflix, while I'm already done with all my homework  
-**I want to** get in touch with people that have the same interests as me  
+**I want to** find people that have the same interests as me  
 **So I** can ask them if they want to do something fun that is in both our interests. 
 
 ## The application
@@ -26,7 +26,7 @@ To install all the packages registered in the package.json file run the code bel
 
     npm install  
 
-#### this will install the following packages:**  
+#### this will install the following packages:  
 **Dependencies**  
 * body-parser 
 * camelcase
@@ -42,13 +42,29 @@ To install all the packages registered in the package.json file run the code bel
 * nodemon
 * prettier
 
-### Templating choice
+#### Templating engine  
+
+#### Linter 
+
 
 
 ## Dataflow
 
 
 ## Setup
+Just extra, but I though it would be fun to inform you about my setup.  
+I'm using Visual Studio Code as my code editor. I prefer VSC because of the intergrated terminal and split screen options.
+To make my life easier I installed a few extensions, they are listed below:
+
+#### Extensions
+* Material theme 
+* Bracket pair colorizer
+* Indent-rainbow
+* Auto Rename Tag
+* Beautify
+
+#### Screenshot
+![image](https://raw.githubusercontent.com/NathanNeelis/Project-Tech/master/Styleguide/editor/editor_nathan.png)
 
 
 
