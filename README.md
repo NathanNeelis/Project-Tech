@@ -83,12 +83,6 @@ Thereby I am using prettier to make my code look prettier!
 My linter is a work in progress because this is the first time that I am using it.  
 Along the way, I might add more rules and update this readme.
 
-## Wiki
-
-Alot of research has been documented in the wiki of this repository.  
-Are you interested in my research, design choices or learning progress?
-[**check out my wiki**](https://github.com/NathanNeelis/Project-Tech/wiki)
-
 ## Dataflow
 
 ## Setup
@@ -109,6 +103,12 @@ To make my life easier I installed a few extensions, they are listed below:
 #### Screenshot
 
 ![image](https://raw.githubusercontent.com/NathanNeelis/Project-Tech/master/Styleguide/editor/editor_nathan.png)
+
+## Wiki
+
+Alot of research has been documented in the wiki of this repository.  
+Are you interested in my research, design choices or learning progress?  
+[**check out my wiki**](https://github.com/NathanNeelis/Project-Tech/wiki)
 
 ## License
 
