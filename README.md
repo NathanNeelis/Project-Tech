@@ -22,12 +22,12 @@ My goal is:
 - To create a working filter function;
 - a register form that creates users in a database; **check**
 - profile pages where you can update your interests;
-- dynamic pages that are rendered by templating and data from the database.
+- dynamic pages that are rendered by templating and data from the database. **check**
 
 ## Getting started
 
-In this project, I used node.js and NPM to install packages.
-To install all the packages registered in the package.json file run the code below after cloning this project.
+In this project, I used node.js and NPM to install packages.  
+To install all the packages registered in the package.json file run the code below after downloading this project.
 
     npm install
 
@@ -43,6 +43,8 @@ To install all the packages registered in the package.json file run the code bel
 - [mongodb](https://www.npmjs.com/package/mongodb)
 - [multer](https://www.npmjs.com/package/multer)
 - [slug](https://www.npmjs.com/package/slug)
+
+#### I also used the following packages while coding:
 
 **Dev dependencies**
 
@@ -88,7 +90,7 @@ To make my life easier I installed a few extensions, they are listed below:
 - Bracket pair colorizer
 - Indent-rainbow
 - Auto Rename Tag
-- Beautify
+- Prettier
 
 #### Screenshot
 
