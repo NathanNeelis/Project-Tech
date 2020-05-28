@@ -13,6 +13,11 @@ Friendship is a dating service, not meant for romantic relationships but for fri
 ![Screenshots of early app version](https://github.com/NathanNeelis/Project-Tech/blob/master/Styleguide/app/app.jpg)
 
 ## How to install
+    NPM install 
+### this will install the following packages:
+#### Dependencies
+
+#### Dev dependencies
 
 ### Templating choice
 
