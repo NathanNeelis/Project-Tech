@@ -11,6 +11,7 @@ Friendship is a dating service, not meant for romantic relationships but for fri
 
 ## The application
 ![Screenshots of early app version](https://raw.githubusercontent.com/NathanNeelis/Project-Tech/master/Styleguide/app/app.jpg)
+![Screenshots of early app version](https://github.com/NathanNeelis/Project-Tech/blob/master/Styleguide/app/app.jpg)
 
 ## How to install
 
