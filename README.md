@@ -22,8 +22,10 @@ My goal is:
 
 ## How to install
 In this project I used node.js and NPM to install packages. 
-To install all the packages registered in the package.json file run the code below after cloning this project.  
+To install all the packages registered in the package.json file run the code below after cloning this project.
+
     NPM install  
+    
 **this will install the following packages:**  
 #### Dependencies
 * body-parser 
