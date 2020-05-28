@@ -21,14 +21,14 @@ My goal is:
 
 - The application is responsive **Must have**; **DONE**
 - To create a working filter function **Must have**;
-- a register form that creates users in a database **Could have**; **DONE**
+- a registration form that creates users in a database **Could have**; **DONE**
 - User profiles **Must have**; **DONE**
 - To be able to update/change your user profile **Must have**;
 - The application should be accessible **Should have**;
-- The application is build according to the progressive enhancement theory **Must have**;
+- The application is built according to the progressive enhancement theory **Must have**;
 - dynamic pages that are rendered by templating and data from the database **Must have**; **DONE**
-- It would be cool if user could login **Wont have**;
-- Users should be able to send messages to eachother **Wont have**.
+- It would be cool if the user could log in **Won't have**;
+- Users should be able to send messages to each other **Won't have**.
 
 for more information about my goals please visit my [wiki's requirement list!](https://github.com/NathanNeelis/Project-Tech/wiki/Requirement-list)
 
@@ -110,15 +110,15 @@ To make my life easier I installed a few extensions, they are listed below:
 
 ## Wiki
 
-Alot of research has been documented in the wiki of this repository.  
-Are you interested in my research, design choices or learning progress?  
+A lot of research has been documented in the wiki of this repository.  
+Are you interested in my research, design choices, or learning progress?  
 [**Check out my wiki here**](https://github.com/NathanNeelis/Project-Tech/wiki)
 
 ## License
 
 [MIT](https://github.com/NathanNeelis/Project-Tech/blob/master/LICENSE)
 
-## Resources in readme
+## Resources in the readme
 
 Tenor. (n.d.). Prettier [GIF]. Retrieved from https://media1.tenor.com/images/8499d1a678b3ec4ce365044239f7b2bf/tenor.gif  
 EJS. (n.d.). Logo EJS [Logo]. Retrieved from https://i0.wp.com/frontnet.eu/wp-content/uploads/2020/04/Javascript_Embedded.png?w=526&ssl=1
