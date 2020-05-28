@@ -117,3 +117,8 @@ Are you interested in my research, design choices or learning progress?
 ## License
 
 [MIT](https://github.com/NathanNeelis/Project-Tech/blob/master/LICENSE)
+
+## Resources in readme
+
+Tenor. (n.d.). Prettier [GIF]. Retrieved from https://media1.tenor.com/images/8499d1a678b3ec4ce365044239f7b2bf/tenor.gif  
+EJS. (n.d.). Logo EJS [Logo]. Retrieved from https://i0.wp.com/frontnet.eu/wp-content/uploads/2020/04/Javascript_Embedded.png?w=526&ssl=1
