@@ -52,13 +52,14 @@ To install all the packages registered in the package.json file run the code bel
 
 #### Templating engine
 
-In my Friendship app, I made a lot of use of the templating engine EJS.
-I choose to use EJS because of its documentation on how to get started.
-I checked out a few others like handlebars and pug but in the end, I felt most comfortable with EJS.
-The way of coding in EJS made a lot of sense to me and actually stood a bit out from the regular coding.
+In my Friendship app, I made a lot of use of the templating engine EJS.  
+I choose to use EJS because of its documentation on how to get started.  
+I checked out a few others like handlebars and pug but in the end, I felt most comfortable with EJS.  
+The way of coding in EJS made a lot of sense to me and actually stood a bit out from the regular coding.  
 For example, while using handlebars, you have to use the accolades but I felt that it was to close to my javascript coding.
 
-In the view folder, you will find my main pages like index, profile, register, and search. These pages are build out of includes. Smaller bits of code that you will find in the folder **"includes"**.
+In the view folder, you will find my main pages like index, profile, register, and search.  
+These pages are build out of includes. Smaller bits of code that you will find in the folder **"includes"**.
 
 #### Linter
 
