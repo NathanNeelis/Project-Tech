@@ -19,16 +19,18 @@ Friendship is a dating service, not meant for romantic relationships but for fri
 At this moment this is a work in progress.
 My goal is:
 
-- The application is responsive **Must have**; **check**
+- The application is responsive **Must have**; **DONE**
 - To create a working filter function **Must have**;
-- a register form that creates users in a database **Could have**; **check**
-- User profiles **Must have**; **check**
+- a register form that creates users in a database **Could have**; **DONE**
+- User profiles **Must have**; **DONE**
 - To be able to update/change your user profile **Must have**;
 - The application should be accessible **Should have**;
 - The application is build according to the progressive enhancement theory **Must have**;
-- dynamic pages that are rendered by templating and data from the database **Must have**; **check**
+- dynamic pages that are rendered by templating and data from the database **Must have**; **DONE**
 - It would be cool if user could login **Wont have**;
-- Users should be able to send messages to eachother **Wont have**;
+- Users should be able to send messages to eachother **Wont have**.
+
+for more information about my goals please visit my [wiki's requirement list!](https://github.com/NathanNeelis/Project-Tech/wiki/Requirement-list)
 
 ## Getting started
 
@@ -80,6 +82,12 @@ Thereby I am using prettier to make my code look prettier!
 
 My linter is a work in progress because this is the first time that I am using it.  
 Along the way, I might add more rules and update this readme.
+
+## Wiki
+
+Alot of research has been documented in the wiki of this repository.  
+Are you interested in my research, design choices or learning progress?
+[**check out my wiki**](https://github.com/NathanNeelis/Project-Tech/wiki)
 
 ## Dataflow
 
