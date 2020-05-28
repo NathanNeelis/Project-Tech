@@ -24,10 +24,10 @@ My goal is:
 In this project I used node.js and NPM to install packages. 
 To install all the packages registered in the package.json file run the code below after cloning this project.
 
-    NPM install  
-    
-**this will install the following packages:**  
-#### Dependencies
+    npm install  
+
+#### this will install the following packages:**  
+**Dependencies**  
 * body-parser 
 * camelcase
 * dotenv
@@ -37,7 +37,7 @@ To install all the packages registered in the package.json file run the code bel
 * multer
 * slug
 
-#### Dev dependencies
+**Dev dependencies**  
 * eslint
 * nodemon
 * prettier
