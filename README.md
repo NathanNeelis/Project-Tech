@@ -10,7 +10,7 @@ Friendship is a dating service, not meant for romantic relationships but for fri
 **So I** can ask them if they want to do something fun that is in both our interests. 
 
 ## The application
-![Screenshots of early app version]()
+![Screenshots of early app version](https://raw.githubusercontent.com/NathanNeelis/Project-Tech/master/Styleguide/app/app.jpg)
 
 ## How to install
 
