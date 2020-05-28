@@ -71,6 +71,8 @@ For example, while using handlebars, you have to use the accolades but I felt th
 In the view folder, you will find my main pages like index, profile, register, and search.  
 These pages are build out of includes. Smaller bits of code that you will find in the folder **"includes"**.
 
+![EJS](https://i0.wp.com/frontnet.eu/wp-content/uploads/2020/04/Javascript_Embedded.png?w=526&ssl=1)
+
 #### Linter
 
 I choose to use ESlint to set up a few rules for coding:
@@ -82,6 +84,8 @@ Thereby I am using prettier to make my code look prettier!
 
 My linter is a work in progress because this is the first time that I am using it.  
 Along the way, I might add more rules and update this readme.
+
+![Prettier](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
 
 ## Dataflow
 
@@ -108,7 +112,7 @@ To make my life easier I installed a few extensions, they are listed below:
 
 Alot of research has been documented in the wiki of this repository.  
 Are you interested in my research, design choices or learning progress?  
-[**check out my wiki**](https://github.com/NathanNeelis/Project-Tech/wiki)
+[**Check out my wiki here**](https://github.com/NathanNeelis/Project-Tech/wiki)
 
 ## License
 
