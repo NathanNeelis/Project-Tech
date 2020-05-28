@@ -68,5 +68,5 @@ To make my life easier I installed a few extensions, they are listed below:
 ![image](https://raw.githubusercontent.com/NathanNeelis/Project-Tech/master/Styleguide/editor/editor_nathan.png)
 
 ## License
-
+[MIT](https://github.com/NathanNeelis/Project-Tech/blob/master/LICENSE)
 
