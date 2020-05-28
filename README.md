@@ -12,15 +12,41 @@ Friendship is a dating service, not meant for romantic relationships but for fri
 ## The application
 ![Screenshots of early app version](https://github.com/NathanNeelis/Project-Tech/blob/master/Styleguide/app/app.jpg)
 
+## Status
+At this moment this is a work in progress. 
+My goal is:  
+* to create a working filter function;  
+* a register form that creates users in a database; **check**  
+* profile pages where you can update your interests;  
+* dynamic pages that are rendered by templating and data from the database.  
+
 ## How to install
+In this project I used node.js and NPM to install packages. 
+To install all the packages registered in the package.json file run the code below after cloning this project.
     NPM install 
-### this will install the following packages:
+**this will install the following packages:**
 #### Dependencies
+* body-parser 
+* camelcase
+* dotenv
+* ejs
+* express
+* mongodb
+* multer
+* slug
 
 #### Dev dependencies
+* eslint
+* nodemon
+* prettier
 
 ### Templating choice
 
+
 ## Dataflow
+
+
+## Setup
+
 
 
