@@ -78,26 +78,27 @@ data = [
   },
 ];
 
+// profile page
 function profile(req, res, next) {
-  db.collection("friendshipData").find().toArray(done);
+  var id = req.params.id;
+  db.collection("friendshipData").findOne(
+    {
+      profileId: id,
+    },
+    done
+  );
 
   function done(err, data) {
     if (err) {
       next(err);
     } else {
-      for (var i = 0; i < data.length; i++) {
-        if (data[i].profileId === req.params.id) {
-          res.render("profile.ejs", {
-            data: data[i],
-          });
-        }
-      }
+      res.render("profile.ejs", { data: data });
     }
   }
 }
 
 // Resource
-// code gelezen van Backend example + code van Bjorn Borgie gelezen
+// code gelezen van Backend example + code van Bjorn Borgie gelezen + les van tech 5 bekeken
 
 //Home page
 function home(req, res, next) {
