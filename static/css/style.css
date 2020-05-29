@@ -434,6 +434,7 @@ form input[type=file] {
 .category-fit div article,
 .category-boardgames div article,
 .categoryComics div article {
+    width: 12em;
     margin: 2em 10vw 4em 12.5vw;
     border-radius: 1em;
     background: #32DCB4;
@@ -453,16 +454,26 @@ form input[type=file] {
 .category-fit div article h4,
 .category-boardgames div article h4,
 .categoryComics div article h4 {
+    width: 12rem;
     padding: .5em 1em 0em 1em;
     color: white;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+
+    /* Resourche whitespace and wordwrap
+    https://developer.mozilla.org/en-US/docs/Web/CSS/white-space */
 
 }
 
 .category-fit div article p,
 .category-boardgames div article p,
 .categoryComics div article p {
+    width: 12em;
     padding: 0em 1em .5em 1em;
     color: white;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 /*--------------------------- Profile page --------------------------------*/

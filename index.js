@@ -164,15 +164,19 @@ function add(req, res, next) {
   }
 }
 
-// trying to update
+//update interests function works by replacing
 function update(req, res, next) {
   let id = req.params.id;
+  let addNewInterests = req.body.addInterests.split(", ");
 
   db.collection('friendshipData').updateOne({
     profileId: id
   }, {
-    $set: {
-      interests: req.body.addInterests.split(", ")
+    $push: {
+      interests: {
+        $each: addNewInterests,
+        $position: -1
+      }
     },
     $currentDate: {
       lastModified: true
@@ -188,5 +192,10 @@ function update(req, res, next) {
   }
 
 }
+
+
+
 // Resource for db update code
 // https://docs.mongodb.com/manual/tutorial/update-documents/
+// Resource on how to update an array by pushing. Instead of inserting another array.
+// https://kb.objectrocket.com/mongo-db/how-to-add-elements-into-an-array-in-mongodb-1195
