@@ -29,6 +29,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
 });
+const session = require("express-session");
 
 require("dotenv").config();
 // database connection
@@ -57,10 +58,16 @@ app.use(
     extended: true,
   })
 );
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET
+}));
 app.post("/", upload.single("profilePicture"), add);
 app.get("/", home); // Routing
 app.get("/search", search); // Routing
 app.get("/register", register); // Routing
+app.get("/logout", logout);
 app.get("/:id", profile);
 app.post("/:id", update);
 app.set("view engine", "ejs"); // Templating
@@ -74,10 +81,6 @@ app.listen(port, function () {
 function notFound(req, res) {
   res.status(404).send("404 page");
 }
-
-data = [{
-  profileId: "nathan1990",
-}, ];
 
 // profile page
 function profile(req, res, next) {
@@ -159,6 +162,10 @@ function add(req, res, next) {
     if (err) {
       next(err);
     } else {
+      req.session.user = {
+        data: data
+      }
+      console.log(req.session.user) // 'Flavio'
       res.redirect("/" + id);
     }
   }
@@ -199,3 +206,14 @@ function update(req, res, next) {
 // https://docs.mongodb.com/manual/tutorial/update-documents/
 // Resource on how to update an array by pushing. Instead of inserting another array.
 // https://kb.objectrocket.com/mongo-db/how-to-add-elements-into-an-array-in-mongodb-1195
+
+
+function logout(req, res, next) {
+  req.session.destroy(function (err) {
+    if (err) {
+      next(err)
+    } else {
+      res.redirect('/')
+    }
+  })
+}
