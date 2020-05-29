@@ -14,12 +14,15 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     console.log(file.mimetype);
-    if (file.mimetype == "image/png") {
+    if (file.mimetype === "image/png") {
       // checks the mimetype
       cb(null, Date.now() + ".png"); //Appending .png
-    } else if (file.mimetype == "image.jpg") {
+    } else if (file.mimetype === "image/jpg") {
       // checks the mimetype
       cb(null, Date.now() + ".jpg"); //Appending .jpg
+    } else if (file.mimetype === "image/jpeg") {
+      // checks the mimetype
+      cb(null, Date.now() + ".jpeg"); //Appending .jpeg
     }
   },
 });
@@ -33,8 +36,7 @@ var db = null;
 var url = "mongodb+srv://" + process.env.DB_HOST;
 
 mongo.MongoClient.connect(
-  url,
-  {
+  url, {
     useUnifiedTopology: true,
   },
   function (err, client) {
@@ -60,6 +62,7 @@ app.get("/", home); // Routing
 app.get("/search", search); // Routing
 app.get("/register", register); // Routing
 app.get("/:id", profile);
+app.post("/:id", update);
 app.set("view engine", "ejs"); // Templating
 app.set("views", "view"); // Templating
 app.use(notFound);
@@ -72,17 +75,14 @@ function notFound(req, res) {
   res.status(404).send("404 page");
 }
 
-data = [
-  {
-    profileId: "nathan1990",
-  },
-];
+data = [{
+  profileId: "nathan1990",
+}, ];
 
 // profile page
 function profile(req, res, next) {
   var id = req.params.id;
-  db.collection("friendshipData").findOne(
-    {
+  db.collection("friendshipData").findOne({
       profileId: id,
     },
     done
@@ -92,11 +92,12 @@ function profile(req, res, next) {
     if (err) {
       next(err);
     } else {
-      res.render("profile.ejs", { data: data });
+      res.render("profile.ejs", {
+        data: data
+      });
     }
   }
 }
-
 // Resource
 // code gelezen van Backend example + code van Bjorn Borgie gelezen + les van tech 5 bekeken
 
@@ -141,8 +142,7 @@ function add(req, res, next) {
   let interestsArray = req.body.interests.split(", ");
 
   // console.log(data.length);
-  db.collection("friendshipData").insertOne(
-    {
+  db.collection("friendshipData").insertOne({
       profileId: id,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
@@ -163,3 +163,30 @@ function add(req, res, next) {
     }
   }
 }
+
+// trying to update
+function update(req, res, next) {
+  let id = req.params.id;
+
+  db.collection('friendshipData').updateOne({
+    profileId: id
+  }, {
+    $set: {
+      interests: req.body.addInterests.split(", ")
+    },
+    $currentDate: {
+      lastModified: true
+    }
+  }, done);
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.redirect("/" + id);
+    }
+  }
+
+}
+// Resource for db update code
+// https://docs.mongodb.com/manual/tutorial/update-documents/

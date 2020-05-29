@@ -21,16 +21,19 @@
                         <dd><%= data.age %></dd>
                         <dt>Location</dt>
                         <dd><%= data.location %></dd>
-                        <dt>Interests</dt>
-                        <dd><%= data.interests %></dd>
-                        <dt>Description</dt>
+                        <% for (let i = 0; i < data.interests.length; i++) { %>
+                        <dt>Interest <%= [i +1] %></dt>
+
+                        <dd><%= data.interests[i] %></dd>
+                        <% } %>
+                        <dt>About me</dt>
                         <dd><%= data.description %></dd>
                     </dl>
                 </div>
             </article>
 
         </section>
-
+        <%- include('includes/add-interests.ejs'); %>
     </main>
     <%- include('includes/footer.ejs'); %>
     <%- include('includes/scripts.ejs'); %>
