@@ -379,6 +379,14 @@ form input[type=file] {
     z-index: -1;
 }
 
+#fileInfoText {
+    color: white;
+    font-size: .7rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+
+}
+
 .pictureLabel {
     margin: 2rem 0 3rem 0;
     padding: 1rem;

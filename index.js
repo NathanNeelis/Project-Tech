@@ -120,6 +120,7 @@ function home(req, res, next) {
         user: req.session.user
       });
     }
+    console.log(req.session.user)
   }
 }
 
@@ -181,6 +182,7 @@ function add(req, res, next) {
     },
     done
   );
+  // console.log(req.file.originalname)
 
   function done(err, data) {
     if (err) {
@@ -230,12 +232,17 @@ function update(req, res, next) {
 function login(req, res, next) {
   db.collection("friendshipData").find().toArray(done);
 
+  if (req.session.user) {
+    res.redirect("/logout");
+  }
+
   function done(err, data) {
     if (err) {
       next(err);
     } else {
       res.render("login.ejs", {
         data: data,
+        user: req.session.user
       });
     }
   }
@@ -257,8 +264,11 @@ function loginUser(req, res, next) {
     if (err) {
       next(err);
     } else {
-      req.session.user = userId;
-      console.log(req.session.user);
+      req.session.user = {
+        user: userId
+      }
+      // console.log(req.session.user);
+      // res.redirect("/");
       res.render("index.ejs", {
         data: data,
         user: req.session.user

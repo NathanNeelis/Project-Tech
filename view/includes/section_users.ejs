@@ -1,0 +1,21 @@
+<section class="category-fit">
+    <h2><%= data.length %> results</h2>
+    <!-- this is data that is defined in the index.js data structure -->
+    <div>
+        <!--       Category 1   Results        -->
+        <% for (let i = 0; i < data.length; i++) { %>
+        <article>
+            <a href="/<%= data[i].profileId %>">
+                <img src="uploads/<%= data[i].profilePicture %>" alt="Profile photo">
+                <h4>
+                    <%= data[i].firstname %> • <%= data[i].age %>
+                </h4>
+                <p>
+                    <%= data[i].location %>
+                </p>
+            </a>
+        </article>
+        <% } %>
+    </div>
+
+</section>
