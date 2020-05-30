@@ -2,14 +2,10 @@
     <div>
         <img src="images/match.png" alt="Matching two profiles">
         <article>
-            <h2>
-                <!-- <% if (user) { %>
-                Hello <%= data.profileId %>!
-                <% } else { %>
-                Introduction
-                <% } %> -->
-                Introduction
-            </h2>
+            <% if (user) { %>
+            <h2><%= data.firstname %></h2>
+            <% } %>
+
 
             <p>Friendship is a dating
                 service, not meant for romantic relationships but for friendships.

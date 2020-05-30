@@ -1,0 +1,23 @@
+<section class="loginUser">
+
+    <div>
+        <form action=/login method="post">
+            <fieldset>
+                <legend>Login</legend>
+                <label for="users">Which user are you?</label>
+                <input type="list" name="userList" list="users" placeholder="Choose here">
+                <datalist id="users">
+                    <% for (let i = 0; i < data.length; i++) { %>
+                    <option value="<%= data[i].profileId %>"><%= data[i].profileId %></option>
+                    <% } %>
+                    <!-- <option value="Danny">Danny</option>
+                    <option value="Janno">Janno</option>
+                    <option value="Jeroen">Jeroen</option>
+                    <option value="Evelien">Evelien</option> -->
+                </datalist>
+                <input type="submit" value="Log in" id="loginTheUser">
+                <label for="loginTheUser"><span class="loginUserSubmit">Log in</span></label>
+            </fieldset>
+        </form>
+    </div>
+</section>

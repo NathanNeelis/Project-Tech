@@ -67,6 +67,8 @@ app.post("/", upload.single("profilePicture"), add);
 app.get("/", home); // Routing
 app.get("/search", search); // Routing
 app.get("/register", register); // Routing
+app.get("/login", login); // Routing
+app.post("/login", loginUser);
 app.get("/logout", logout);
 app.get("/:id", profile);
 app.post("/:id", update);
@@ -108,12 +110,19 @@ function profile(req, res, next) {
 function home(req, res, next) {
   db.collection("friendshipData").find().toArray(done);
 
+  // console.log(req.session.user);
+  if (!req.session.user) {
+    res.status(401).send('Credentials required')
+    return
+  }
+
   function done(err, data) {
     if (err) {
       next(err);
     } else {
       res.render("index.ejs", {
         data: data,
+        user: req.session.user
       });
     }
   }
@@ -162,10 +171,6 @@ function add(req, res, next) {
     if (err) {
       next(err);
     } else {
-      req.session.user = {
-        data: data
-      }
-      console.log(req.session.user) // 'Flavio'
       res.redirect("/" + id);
     }
   }
@@ -206,6 +211,52 @@ function update(req, res, next) {
 // https://docs.mongodb.com/manual/tutorial/update-documents/
 // Resource on how to update an array by pushing. Instead of inserting another array.
 // https://kb.objectrocket.com/mongo-db/how-to-add-elements-into-an-array-in-mongodb-1195
+
+
+// login page
+function login(req, res, next) {
+  db.collection("friendshipData").find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.render("login.ejs", {
+        data: data,
+      });
+    }
+  }
+}
+
+
+// logs in a user and gives it a session
+function loginUser(req, res, next) {
+  let userId = req.body.userList
+
+  db.collection("friendshipData").findOne({
+      profileId: userId,
+    },
+    done
+  );
+
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      req.session.user = userId;
+      console.log(req.session.user);
+      res.render("index.ejs", {
+        data: data,
+        user: req.session.user
+      });
+    }
+  }
+
+}
+
+
+
 
 
 function logout(req, res, next) {

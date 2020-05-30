@@ -115,6 +115,58 @@ a {
         -10px -10px 30px #e1e1e1;
 }
 
+/*--------------------------- Login User --------------------------------*/
+/*--------------------------- Login User --------------------------------*/
+/*--------------------------- Login User --------------------------------*/
+.loginUser {
+    background-color: #FF0073;
+    width: 100vw;
+}
+
+.loginUser legend {
+    padding-top: 2rem;
+}
+
+.loginUser div {
+    margin: 0 auto;
+    width: 60vw;
+}
+
+form input[type=list] {
+    -webkit-appearance: none;
+    padding: 1rem;
+    border-width: .1rem;
+    border-style: solid;
+    border-color: white;
+    border-radius: .5rem;
+    width: 100%;
+    margin: .5rem 0 1rem 0;
+}
+
+.loginUser form input[type=submit] {
+    display: block;
+    margin: 2rem 0 2rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    -webkit-appearance: none;
+    border: 0 solid white;
+    background: #FF0073;
+    box-shadow: 10px 10px 28px #a6004b,
+        -10px -10px 28px #ff009b;
+    color: white;
+    width: 8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    transition: all 1s ease;
+
+}
+
+.loginUserSubmit {
+    position: absolute;
+    z-index: -1;
+}
+
+
 /*--------------------------- Filter function --------------------------------*/
 /*--------------------------- Filter function --------------------------------*/
 /*--------------------------- Filter function --------------------------------*/
@@ -564,6 +616,34 @@ footer {
     li {
         border-bottom: 0px solid white;
     }
+
+    /*--------------------------- Log in user --------------------------------*/
+
+
+    .loginUser form input[type=submit]:hover {
+        background: #FF0073;
+        box-shadow: inset 10px 10px 28px #a6004b,
+            inset -10px -10px 28px #ff009b;
+    }
+
+    .loginUser {
+        background-color: #FF0073;
+        width: 30vw;
+        border-radius: 1rem;
+        box-shadow: 10px 10px 30px #a7a7a7,
+            -10px -10px 30px #e1e1e1;
+        margin: 4rem auto;
+    }
+
+    .loginUser legend {
+        padding: 2rem;
+    }
+
+    .loginUser div {
+        margin: 0 auto;
+        width: 25vw;
+    }
+
 
     /*--------------------------- Filter function --------------------------------*/
 
