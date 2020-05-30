@@ -111,16 +111,22 @@ function profile(req, res, next) {
 function home(req, res, next) {
   db.collection("friendshipData").find().toArray(done);
 
+  if (!req.session.user) {
+    res.status(401).send('Credentials required')
+    return
+  }
+
   function done(err, data) {
     if (err) {
       next(err);
     } else {
+      console.log(req.session.user)
       res.render("index.ejs", {
-        data: data,
-        user: req.session.user
+        user: req.session.user,
+        data: data
       });
     }
-    console.log(req.session.user)
+
   }
 }
 
@@ -169,7 +175,7 @@ function add(req, res, next) {
   let id = slug(req.body.profileId).toLowerCase();
   let interestsArray = req.body.interests.split(", ");
 
-  // console.log(data.length);
+
   db.collection("friendshipData").insertOne({
       profileId: id,
       firstname: req.body.firstname,
@@ -182,7 +188,7 @@ function add(req, res, next) {
     },
     done
   );
-  // console.log(req.file.originalname)
+
 
   function done(err, data) {
     if (err) {
@@ -265,22 +271,17 @@ function loginUser(req, res, next) {
       next(err);
     } else {
       req.session.user = {
-        user: userId
+        user: data
       }
       // console.log(req.session.user);
-      // res.redirect("/");
-      res.render("index.ejs", {
-        data: data,
-        user: req.session.user
-      });
+      res.redirect("/");
+      // res.render("index.ejs", {
+      //   data: data,
+      //   user: req.session.user
+      // });
     }
   }
-
 }
-
-
-
-
 
 function logout(req, res, next) {
   req.session.destroy(function (err) {
