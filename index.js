@@ -98,7 +98,8 @@ function profile(req, res, next) {
       next(err);
     } else {
       res.render("profile.ejs", {
-        data: data
+        data: data,
+        user: req.session.user
       });
     }
   }
@@ -109,12 +110,6 @@ function profile(req, res, next) {
 //Home page
 function home(req, res, next) {
   db.collection("friendshipData").find().toArray(done);
-
-  // console.log(req.session.user);
-  if (!req.session.user) {
-    res.status(401).send('Credentials required')
-    return
-  }
 
   function done(err, data) {
     if (err) {
@@ -130,12 +125,31 @@ function home(req, res, next) {
 
 //Register function
 function register(req, res) {
-  res.render("register.ejs");
+  db.collection("friendshipData").find().toArray(done);
+
+  if (req.session.user) {
+    res.redirect("/logout");
+  }
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.render("register.ejs", {
+        data: data,
+        user: req.session.user
+      });
+    }
+  }
 }
 
 // search page
 function search(req, res, next) {
   db.collection("friendshipData").find().toArray(done);
+
+  if (!req.session.user) {
+    res.redirect("/login");
+  }
 
   function done(err, data) {
     if (err) {
@@ -143,6 +157,7 @@ function search(req, res, next) {
     } else {
       res.render("search.ejs", {
         data: data,
+        user: req.session.user
       });
     }
   }
@@ -205,8 +220,6 @@ function update(req, res, next) {
 
 }
 
-
-
 // Resource for db update code
 // https://docs.mongodb.com/manual/tutorial/update-documents/
 // Resource on how to update an array by pushing. Instead of inserting another array.
@@ -264,7 +277,7 @@ function logout(req, res, next) {
     if (err) {
       next(err)
     } else {
-      res.redirect('/')
+      res.redirect('/login')
     }
   })
 }

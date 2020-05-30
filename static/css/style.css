@@ -121,6 +121,7 @@ a {
 .loginUser {
     background-color: #FF0073;
     width: 100vw;
+    padding-bottom: 1rem;
 }
 
 .loginUser legend {
@@ -164,6 +165,31 @@ form input[type=list] {
 .loginUserSubmit {
     position: absolute;
     z-index: -1;
+}
+
+.loginUser article {
+    margin: 0 0 5rem 0;
+}
+
+.loginUser article h2 {
+    color: white;
+}
+
+.loginUser article a {
+    display: block;
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 0 solid white;
+    background: #FF0073;
+    box-shadow: 10px 10px 28px #a6004b,
+        -10px -10px 28px #ff009b;
+    color: white;
+    width: 12rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    transition: all 1s ease;
 }
 
 
@@ -691,6 +717,12 @@ footer {
     }
 
     .register form input[type=submit]:hover {
+        background: #FF0073;
+        box-shadow: inset 10px 10px 28px #a6004b,
+            inset -10px -10px 28px #ff009b;
+    }
+
+    .loginUser article a:hover {
         background: #FF0073;
         box-shadow: inset 10px 10px 28px #a6004b,
             inset -10px -10px 28px #ff009b;

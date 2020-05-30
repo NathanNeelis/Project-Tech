@@ -3,7 +3,12 @@
 <body>
   <%- include('includes/header.ejs'); %>
   <main>
+    <% if (user) { %>
+    <%- include('includes/hello-user'); %>
+    <% } else { %>
     <%- include('includes/introduction.ejs'); %>
+    <% } %>
+
     <%- include('includes/section_fit.ejs'); %>
     <%- include('includes/section_boardgames.ejs'); %>
     <%- include('includes/section_comics.ejs'); %>

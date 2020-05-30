@@ -18,9 +18,16 @@
             <li><a href="/search" class="filterButton">
                     Search
                 </a></li>
-            <li><a href="/register" class="registerButton">
-                    Register
+            <% if (user) { %>
+            <li><a href="/logout" class="registerButton">
+                    Log out
                 </a></li>
+            <% } else { %>
+            <li><a href="/login" class="registerButton">
+                    Log in
+                </a></li>
+            <% } %>
+
 
         </ul>
     </nav>
