@@ -51,6 +51,7 @@ To install all the packages registered in the package.json file run the code bel
 - [express-session](https://www.npmjs.com/package/express-session)
 - [mongodb](https://www.npmjs.com/package/mongodb)
 - [multer](https://www.npmjs.com/package/multer)
+- [path](https://www.npmjs.com/package/path)
 - [slug](https://www.npmjs.com/package/slug)
 
 #### I also used the following packages while coding:

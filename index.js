@@ -5,6 +5,7 @@ const bodyParser = require("body-parser"); // load body parser for http requests
 const slug = require("slug");
 const app = express();
 const multer = require("multer");
+const path = require('path');
 const mongo = require("mongodb");
 const port = 3000; // browser adress
 const storage = multer.diskStorage({
@@ -14,16 +15,10 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     console.log(file.mimetype);
-    if (file.mimetype === "image/png") {
-      // checks the mimetype
-      cb(null, Date.now() + ".png"); //Appending .png
-    } else if (file.mimetype === "image/jpg") {
-      // checks the mimetype
-      cb(null, Date.now() + ".jpg"); //Appending .jpg
-    } else if (file.mimetype === "image/jpeg") {
-      // checks the mimetype
-      cb(null, Date.now() + ".jpeg"); //Appending .jpeg
-    }
+    console.log(file);
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    // resource: https://stackoverflow.com/questions/31592726/how-to-store-a-file-with-file-extension-with-multer
+    // resource: Found out about this by reading the code of Nadine van den Bosch.
   },
 });
 const upload = multer({
@@ -105,7 +100,7 @@ function profile(req, res, next) {
   }
 }
 // Resource
-// code gelezen van Backend example + code van Bjorn Borgie gelezen + les van tech 5 bekeken
+// read the code examples from backend + the code from Bjorn Borgie + I watched the recorded lesson from tech 5
 
 //Home page
 function home(req, res, next) {
