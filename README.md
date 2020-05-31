@@ -90,6 +90,8 @@ Along the way, I might add more rules and update this readme.
 
 ## Dataflow
 
+![Dataflow](https://raw.githubusercontent.com/NathanNeelis/Project-Tech/master/Styleguide/dataflow/dataflow.jpg)
+
 ## Setup
 
 Just extra, but I thought it would be fun to inform you about my setup.  
