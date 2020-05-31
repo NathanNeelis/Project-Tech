@@ -23,7 +23,7 @@ My goal is:
 - To create a working filter function **Must have**;
 - a registration form that creates users in a database **Could have**; **DONE**
 - User profiles **Must have**; **DONE**
-- To be able to update/change your user profile **Must have**;
+- To be able to update/change your user profile **Must have**; **DONE**
 - The application should be accessible **Should have**;
 - The application is built according to the progressive enhancement theory **Must have**;
 - dynamic pages that are rendered by templating and data from the database **Must have**; **DONE**
@@ -37,7 +37,7 @@ for more information about my goals please visit my [wiki's requirement list!](h
 In this project, I used node.js and NPM to install packages.  
 To install all the packages registered in the package.json file run the code below after downloading this project.
 
-    npm install
+    $ npm install
 
 #### This will install the following packages:
 
@@ -48,6 +48,7 @@ To install all the packages registered in the package.json file run the code bel
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [ejs](https://www.npmjs.com/package/ejs)
 - [express](https://www.npmjs.com/package/express)
+- [express-session](https://www.npmjs.com/package/express-session)
 - [mongodb](https://www.npmjs.com/package/mongodb)
 - [multer](https://www.npmjs.com/package/multer)
 - [slug](https://www.npmjs.com/package/slug)

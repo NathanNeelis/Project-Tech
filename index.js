@@ -47,7 +47,7 @@ mongo.MongoClient.connect(
 
     db = client.db(process.env.DB_NAME);
     console.log("Connected correctly to MongoDB server");
-    console.log(process.env.DB_NAME);
+    // console.log(process.env.DB_NAME);
   }
 );
 
@@ -109,18 +109,17 @@ function profile(req, res, next) {
 
 //Home page
 function home(req, res, next) {
+  // db.collection("friendshipData").findOne(done);
   db.collection("friendshipData").find().toArray(done);
-
-  if (!req.session.user) {
-    res.status(401).send('Credentials required')
-    return
-  }
 
   function done(err, data) {
     if (err) {
       next(err);
     } else {
-      console.log(req.session.user)
+      // for (let i = 0; i < data.length; i++) {
+      //   console.log(data[i].profileId);
+      // }
+      // console.log(req.session.user)
       res.render("index.ejs", {
         user: req.session.user,
         data: data
@@ -271,7 +270,7 @@ function loginUser(req, res, next) {
       next(err);
     } else {
       req.session.user = {
-        user: data
+        user: userId
       }
       // console.log(req.session.user);
       res.redirect("/");
