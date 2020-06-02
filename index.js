@@ -104,32 +104,44 @@ function profile(req, res, next) {
 
 //Home page
 async function home(req, res, next) {
-  if (!req.session.user) { // BUG, STILL NEED TO FIX THIS! CANT ACCES HOMEPAGE WHILE NOG LOGGED IN.
-    res.redirect("/login");
-  }
+  if (req.session.user) { // Is there a user logged in? If so then:
 
-  const allData = await db.collection("friendshipData").find().toArray();
-  const myData = await db.collection("friendshipData").findOne({
-    profileId: req.session.user.user.profileId
-  });
-
-
-  if (!allData) {
-    res.send("Error occured while retrieving data");
-  }
-  done(allData, myData);
-
-  function done(allData, myData) {
-    // console.log("this is all data", allData);
-    // console.log("this is my data", myData);
-    res.render("index.ejs", {
-      user: myData,
-      data: allData
+    const allData = await db.collection("friendshipData").find().toArray();
+    const myData = await db.collection("friendshipData").findOne({
+      profileId: req.session.user.user.profileId
     });
-  }
-  console.log(allData);
-}
 
+
+    if (!allData) {
+      res.send("Error occured while retrieving data");
+    }
+    done(allData, myData);
+
+    function done(allData, myData) {
+      // console.log("this is all data", allData);
+      // console.log("this is my data", myData);
+      res.render("index.ejs", {
+        user: myData,
+        data: allData
+      });
+    }
+    console.log(allData);
+  } else if (!req.session.user) { // If there is no user logged in:
+    db.collection("friendshipData").find().toArray(done);
+
+    function done(err, data) {
+      if (err) {
+        next(err);
+      } else {
+        res.render("index.ejs", {
+          data: data,
+          user: req.session.user
+        });
+      }
+    }
+  }
+
+}
 // resource: I got help from Janno kapritsias through an individual screenshare sessions 
 // when I got stuck using async / await.
 
