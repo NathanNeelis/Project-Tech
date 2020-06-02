@@ -103,6 +103,10 @@ function profile(req, res, next) {
 
 //Home page
 async function home(req, res, next) {
+  if (!req.session.user) {
+    res.redirect("/login");
+  }
+
   const allData = await db.collection("friendshipData").find().toArray();
   const myData = await db.collection("friendshipData").findOne({
     profileId: req.session.user.user.profileId
@@ -121,7 +125,7 @@ async function home(req, res, next) {
       data: allData
     });
   }
-  console.log(req.session.user);
+  console.log(allData);
 }
 
 // resource: I got help from Janno kapritsias through an individual screenshare sessions 
