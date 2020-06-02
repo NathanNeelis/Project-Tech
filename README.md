@@ -135,6 +135,9 @@ Joseph , W. (n.d.). profile [icon]. Retrieved from https://thenounproject.com/se
 **Articles / code examples**  
 Stackoverflow. (2015, July 23). How to store a file with file extension with multer? Retrieved from https://stackoverflow.com/questions/31592726/how-to-store-a-file-with-file-extension-with-multer
 
+Resources on **async / await**  
+MDN. (2020, May 19). Making asynchronous programming easier with async and await. Retrieved from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
+
 The Coding Train. (2018, May 28). 16.11: Promises Part 1 - Topics of JavaScript/ES6 [Video file]. In YouTube. Retrieved from https://www.youtube.com/watch?v=QO4NXhWo_NM
 
 The Coding Train. (2018b, May 29). 16.12: Promises Part 2 - Topics of JavaScript/ES6 [Video file]. In YouTube. Retrieved from https://www.youtube.com/watch?v=AwyoVjVXnLk
