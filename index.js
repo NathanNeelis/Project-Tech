@@ -7,7 +7,7 @@ const app = express();
 const multer = require("multer");
 const path = require('path');
 const mongo = require("mongodb");
-const port = 3000; // browser adress
+const port = process.env.port || 3000; // browser adress
 const storage = multer.diskStorage({
   // This adds a name and extension to the uploaded file.
   destination: function (req, file, cb) {
