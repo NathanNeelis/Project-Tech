@@ -103,51 +103,39 @@ function profile(req, res, next) {
 // read the code examples from backend + the code from Bjorn Borgie + I watched the recorded lesson from tech 5
 
 //Home page
-function home(req, res, next) {
+async function home(req, res, next) {
+  const allData = await db.collection("friendshipData").find().toArray();
+  const myData = await db.collection("friendshipData").findOne({
+    profileId: req.session.user.user.profileId
+  });
 
-  userData()
-    .then((response) => console.log(response))
-    // .then((data) => res.render("index.ejs"), data, {
-    //   user: req.session.user,
-    //   data: data,
-    // })
-    .catch((err) => console.log(err));
+  if (!allData) {
+    res.send("Error occured while retrieving data");
+  }
+  done(allData, myData);
 
-  // function done(err, data) {
-  //   if (err) {
-  //     next(err);
-  //   } else {
-
-  //     res.render("index.ejs", {
-  //       user: req.session.user,
-  //       data: data
-  //     });
-  //   }
-
-  // }
-
+  function done(allData, myData) {
+    // console.log("this is all data", allData);
+    // console.log("this is my data", myData);
+    res.render("index.ejs", {
+      user: myData,
+      data: allData
+    });
+  }
+  console.log(req.session.user.user.profileId);
 }
 
+// resource: I got help from Janno kapritsias through an individual screenshare sessions 
+// when I got stuck using async / await.
 
+// other resources learning async / await:
+// https://www.youtube.com/watch?v=QO4NXhWo_NM. // promises part 1 what is a promise
+// https://www.youtube.com/watch?v=AwyoVjVXnLk // promises part 2 how to make a promise
+// https://www.youtube.com/watch?v=XO77Fib9tSI // Async await part 1
+// https://www.youtube.com/watch?v=chavThlNz3s // Async await part 2
 
-// 1. get all data from the database for rendering all ejs templates
-// 3. get a specific user from the database
-// 4. refer session to that specific user from the database
-// 5. render index.ejs
-
-
-// van GITHUB
-function userData() {
-  return new Promise(resolve => {
-    resolve(
-      db
-      .collection('friendshipData')
-      .find()
-      .toArray()
-    )
-  })
-}
-
+// Resource selecting one object from database for sessions
+// https://docs.mongodb.com/manual/reference/method/db.collection.findOne/#db.collection.findOne
 
 
 //Register function
@@ -291,14 +279,9 @@ function loginUser(req, res, next) {
       next(err);
     } else {
       req.session.user = {
-        user: userId
+        user: data
       }
-      // console.log(req.session.user);
       res.redirect("/");
-      // res.render("index.ejs", {
-      //   data: data,
-      //   user: req.session.user
-      // });
     }
   }
 }
