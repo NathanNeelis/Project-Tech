@@ -94,6 +94,7 @@ function profile(req, res, next) {
     } else {
       res.render("profile.ejs", {
         data: data,
+        user: req.session.user
       });
     }
   }
@@ -103,7 +104,7 @@ function profile(req, res, next) {
 
 //Home page
 async function home(req, res, next) {
-  if (!req.session.user) {
+  if (!req.session.user) { // BUG, STILL NEED TO FIX THIS! CANT ACCES HOMEPAGE WHILE NOG LOGGED IN.
     res.redirect("/login");
   }
 
@@ -111,6 +112,7 @@ async function home(req, res, next) {
   const myData = await db.collection("friendshipData").findOne({
     profileId: req.session.user.user.profileId
   });
+
 
   if (!allData) {
     res.send("Error occured while retrieving data");
@@ -155,6 +157,7 @@ function register(req, res) {
     } else {
       res.render("register.ejs", {
         data: data,
+        user: req.session.user
       });
     }
   }
@@ -174,6 +177,7 @@ function search(req, res, next) {
     } else {
       res.render("search.ejs", {
         data: data,
+        user: req.session.user
       });
     }
   }
