@@ -81,7 +81,7 @@ function notFound(req, res) {
 
 // profile page
 function profile(req, res, next) {
-  var id = req.params.id;
+  let id = req.params.id;
   db.collection("friendshipData").findOne({
       profileId: id,
     },
@@ -104,25 +104,51 @@ function profile(req, res, next) {
 
 //Home page
 function home(req, res, next) {
-  // db.collection("friendshipData").findOne(done);
-  db.collection("friendshipData").find().toArray(done);
 
-  function done(err, data) {
-    if (err) {
-      next(err);
-    } else {
-      // for (let i = 0; i < data.length; i++) {
-      //   console.log(data[i].profileId);
-      // }
-      // console.log(req.session.user)
-      res.render("index.ejs", {
-        user: req.session.user,
-        data: data
-      });
-    }
+  userData()
+    .then((response) => console.log(response))
+    // .then((data) => res.render("index.ejs"), data, {
+    //   user: req.session.user,
+    //   data: data,
+    // })
+    .catch((err) => console.log(err));
 
-  }
+  // function done(err, data) {
+  //   if (err) {
+  //     next(err);
+  //   } else {
+
+  //     res.render("index.ejs", {
+  //       user: req.session.user,
+  //       data: data
+  //     });
+  //   }
+
+  // }
+
 }
+
+
+
+// 1. get all data from the database for rendering all ejs templates
+// 3. get a specific user from the database
+// 4. refer session to that specific user from the database
+// 5. render index.ejs
+
+
+// van GITHUB
+function userData() {
+  return new Promise(resolve => {
+    resolve(
+      db
+      .collection('friendshipData')
+      .find()
+      .toArray()
+    )
+  })
+}
+
+
 
 //Register function
 function register(req, res) {
