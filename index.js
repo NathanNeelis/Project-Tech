@@ -94,7 +94,6 @@ function profile(req, res, next) {
     } else {
       res.render("profile.ejs", {
         data: data,
-        user: req.session.user
       });
     }
   }
@@ -152,7 +151,6 @@ function register(req, res) {
     } else {
       res.render("register.ejs", {
         data: data,
-        user: req.session.user
       });
     }
   }
@@ -172,7 +170,6 @@ function search(req, res, next) {
     } else {
       res.render("search.ejs", {
         data: data,
-        user: req.session.user
       });
     }
   }
@@ -256,7 +253,6 @@ function login(req, res, next) {
     } else {
       res.render("login.ejs", {
         data: data,
-        user: req.session.user
       });
     }
   }

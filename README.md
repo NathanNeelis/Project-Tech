@@ -122,11 +122,32 @@ Are you interested in my research, design choices, or learning progress?
 
 [MIT](https://github.com/NathanNeelis/Project-Tech/blob/master/LICENSE)
 
-## Resources in the readme
+## Resources
 
+**Images**
 Tenor. (n.d.). Prettier [GIF]. Retrieved from https://media1.tenor.com/images/8499d1a678b3ec4ce365044239f7b2bf/tenor.gif  
 EJS. (n.d.). Logo EJS [Logo]. Retrieved from https://i0.wp.com/frontnet.eu/wp-content/uploads/2020/04/Javascript_Embedded.png?w=526&ssl=1
 Shiva. (n.d.). Form [Icon]. Retrieved from https://thenounproject.com/search/?q=form&i=2034112  
 Creative Stall. (n.d.). database [icon]. Retrieved from https://thenounproject.com/search/?q=database&i=996054  
 Lil Squid. (n.d.). user [icon]. Retrieved from https://thenounproject.com/search/?q=user&i=26029  
 Joseph , W. (n.d.). profile [icon]. Retrieved from https://thenounproject.com/search/?q=profile&i=95876
+
+**Articles / code examples**
+Stackoverflow. (2015, July 23). How to store a file with file extension with multer? Retrieved from https://stackoverflow.com/questions/31592726/how-to-store-a-file-with-file-extension-with-multer
+
+The Coding Train. (2018, May 28). 16.11: Promises Part 1 - Topics of JavaScript/ES6 [Video file]. In YouTube. Retrieved from https://www.youtube.com/watch?v=QO4NXhWo_NM
+
+The Coding Train. (2018b, May 29). 16.12: Promises Part 2 - Topics of JavaScript/ES6 [Video file]. In YouTube. Retrieved from https://www.youtube.com/watch?v=AwyoVjVXnLk
+
+The Coding Train. (2018c, May 30). 16.13: async/await Part 1 - Topics of JavaScript/ES8 [Video file]. In YouTube. Retrieved from https://www.youtube.com/watch?v=XO77Fib9tSI
+
+The Coding Train. (2018d, May 31). 16.14: async/await Part 2 - Topics of JavaScript/ES8 [Video file]. In YouTube. Retrieved from https://www.youtube.com/watch?v=chavThlNz3s
+
+Resource selecting one object from database for sessions  
+MongoDB. (n.d.). db.collection.findOne() — MongoDB Manual. Retrieved from https://docs.mongodb.com/manual/reference/method/db.collection.findOne/#db.collection.findOne
+
+Resource for db update code  
+Update Documents — MongoDB Manual. (n.d.). Retrieved from https://docs.mongodb.com/manual/tutorial/update-documents/
+
+Resource on how to update an array by pushing. Instead of inserting another array.  
+How to Add Elements into an Array in MongoDB | ObjectRocket. (n.d.). Retrieved from https://kb.objectrocket.com/mongo-db/how-to-add-elements-into-an-array-in-mongodb-1195
