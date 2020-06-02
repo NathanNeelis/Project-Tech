@@ -122,7 +122,7 @@ async function home(req, res, next) {
       data: allData
     });
   }
-  console.log(req.session.user.user.profileId);
+  console.log(req.session.user);
 }
 
 // resource: I got help from Janno kapritsias through an individual screenshare sessions 
