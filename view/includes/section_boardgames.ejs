@@ -20,15 +20,15 @@
     <h2>These people like playing board games!</h2>
     <div>
         <!--       Category 2    board gamers       -->
-        <% for (let i = 0; i < data.length; i++) { %>
+        <% for (let i = 0; i < dataBG.length; i++) { %>
         <article>
-            <a href="/<%= data[i].profileId %>">
-                <img src="uploads/<%= data[i].profilePicture %>" alt="Profile photo">
+            <a href="/<%= dataBG[i].profileId %>">
+                <img src="uploads/<%= dataBG[i].profilePicture %>" alt="Profile photo">
                 <h4>
-                    <%= data[i].firstname %> • <%= data[i].age %>
+                    <%= dataBG[i].firstname %> • <%= dataBG[i].age %>
                 </h4>
                 <p>
-                    <%= data[i].location %>
+                    <%= dataBG[i].location %>
                 </p>
             </a>
         </article>

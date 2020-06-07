@@ -5,7 +5,7 @@ const bodyParser = require("body-parser"); // load body parser for http requests
 const slug = require("slug");
 const app = express();
 const multer = require("multer");
-const path = require('path');
+const path = require("path");
 const mongo = require("mongodb");
 const port = 3000; // browser adress
 const storage = multer.diskStorage({
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     console.log(file.mimetype);
     console.log(file);
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
     // resource: https://stackoverflow.com/questions/31592726/how-to-store-a-file-with-file-extension-with-multer
     // resource: Found out about this by reading the code of Nadine van den Bosch.
   },
@@ -112,20 +112,30 @@ async function home(req, res, next) {
     });
 
 
+    const dataBG = await db.collection("friendshipData").find({
+      interests: "Board games"
+    }).toArray();
+
+    console.log(dataBG);
+
+
     if (!allData) {
       res.send("Error occured while retrieving data");
     }
-    done(allData, myData);
+    done(allData, myData, dataBG);
 
-    function done(allData, myData) {
+    function done(allData, myData, dataBG) {
       // console.log("this is all data", allData);
       // console.log("this is my data", myData);
       res.render("index.ejs", {
         user: myData,
-        data: allData
+        data: allData,
+        dataBG: dataBG
+
       });
     }
-    console.log(allData);
+
+    // console.log(allData);
   } else if (!req.session.user) { // If there is no user logged in:
     db.collection("friendshipData").find().toArray(done);
 
@@ -307,7 +317,7 @@ function logout(req, res, next) {
     if (err) {
       next(err)
     } else {
-      res.redirect('/login')
+      res.redirect("/login")
     }
   })
 }
