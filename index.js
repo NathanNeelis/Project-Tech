@@ -104,53 +104,54 @@ function profile(req, res, next) {
 
 //Home page
 async function home(req, res, next) {
-  if (req.session.user) { // Is there a user logged in? If so then:
+  const allData = await db.collection("friendshipData").find().toArray();
+  const dataBG = await db.collection("friendshipData").find({
+    interests: "Board games" // Looks in all data for people that have Board games in their interests
+  }).toArray();
+  const dataComics = await db.collection("friendshipData").find({
+    interests: "Comics",
+    interests: "comics" // Looks in all data for people that have comics in their interests
+  }).toArray();
 
-    const allData = await db.collection("friendshipData").find().toArray();
+  if (req.session.user) { // Is there a user logged in? If so then:
     const myData = await db.collection("friendshipData").findOne({
       profileId: req.session.user.user.profileId
     });
 
-
-    const dataBG = await db.collection("friendshipData").find({
-      interests: "Board games"
-    }).toArray();
-
-    console.log(dataBG);
-
-
     if (!allData) {
       res.send("Error occured while retrieving data");
     }
-    done(allData, myData, dataBG);
 
-    function done(allData, myData, dataBG) {
+    done(allData, myData, dataBG, dataComics);
+
+    function done(allData, myData, dataBG, dataComics) {
       // console.log("this is all data", allData);
       // console.log("this is my data", myData);
       res.render("index.ejs", {
         user: myData,
         data: allData,
-        dataBG: dataBG
+        dataBG: dataBG,
+        dataComics: dataComics
 
       });
     }
 
     // console.log(allData);
   } else if (!req.session.user) { // If there is no user logged in:
-    db.collection("friendshipData").find().toArray(done);
+    // db.collection("friendshipData").find().toArray(done);
+    done(allData, dataBG, dataComics);
 
-    function done(err, data) {
-      if (err) {
-        next(err);
-      } else {
-        res.render("index.ejs", {
-          data: data,
-          user: req.session.user
-        });
-      }
+    function done(allData, dataBG, dataComics) {
+      res.render("index.ejs", {
+        user: req.session.user,
+        data: allData,
+        dataBG: dataBG,
+        dataComics: dataComics
+
+      });
     }
-  }
 
+  }
 }
 // resource: I got help from Janno kapritsias through an individual screenshare sessions 
 // when I got stuck using async / await.
