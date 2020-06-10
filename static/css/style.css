@@ -370,7 +370,7 @@ form textarea {
     z-index: -1;
 }
 
-form input[type=file] {
+.hideWebLayout {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
