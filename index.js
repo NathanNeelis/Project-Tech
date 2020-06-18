@@ -58,6 +58,9 @@ app.use(session({
   saveUninitialized: true,
   secret: process.env.SESSION_SECRET
 }));
+app.use(express.json({
+  limit: '1mb'
+}));
 app.post("/", upload.single("profilePicture"), add);
 app.get("/", home); // Routing
 app.get("/search", search); // Routing
@@ -65,6 +68,8 @@ app.get("/register", register); // Routing
 app.get("/login", login); // Routing
 app.post("/login", loginUser);
 app.get("/logout", logout);
+app.get("/apipage", apiPage);
+app.post("/apipage", home);
 app.get("/:id", profile);
 app.post("/:id", update);
 app.set("view engine", "ejs"); // Templating
@@ -78,6 +83,29 @@ app.listen(port, function () {
 function notFound(req, res) {
   res.status(404).send("404 page");
 }
+
+function loadApi(req, res) {
+
+  console.log(req.body);
+
+};
+
+function apiPage(req, res) {
+  db.collection("friendshipData").find().toArray(done);
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.render("api.ejs", {
+        data: data,
+        user: req.session.user
+      });
+    }
+  }
+};
+
+
 
 // profile page
 function profile(req, res, next) {
@@ -104,6 +132,7 @@ function profile(req, res, next) {
 
 //Home page
 async function home(req, res, next) {
+  console.log(req.body);
   const allData = await db.collection("friendshipData").find().toArray();
   const dataBG = await db.collection("friendshipData").find({
     interests: "Board games" // Looks in all data for people that have Board games in their interests
