@@ -84,12 +84,6 @@ function notFound(req, res) {
   res.status(404).send("404 page");
 }
 
-function loadApi(req, res) {
-
-  console.log(req.body);
-
-};
-
 function apiPage(req, res) {
   db.collection("friendshipData").find().toArray(done);
 
@@ -104,8 +98,6 @@ function apiPage(req, res) {
     }
   }
 };
-
-
 
 // profile page
 function profile(req, res, next) {
@@ -129,6 +121,15 @@ function profile(req, res, next) {
 }
 // Resource
 // read the code examples from backend + the code from Bjorn Borgie + I watched the recorded lesson from tech 5
+
+
+function apiData(req, res) {
+  console.log(req.body);
+  // let temp = req.body.temp;
+  // return temp;
+}
+
+// const temp = apiData();
 
 //Home page
 async function home(req, res, next) {
