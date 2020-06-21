@@ -312,6 +312,7 @@ section form div div input[type=checkbox] {
 .search {
     position: absolute;
     z-index: -1;
+    visibility: hidden;
 }
 
 /*--------------------------- Register --------------------------------*/
@@ -471,6 +472,30 @@ form textarea {
 }
 
 
+/*--------------------------- API files --------------------------------*/
+.userLocation {
+    display: none;
+}
+
+.statusC {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+#weatherStatus {
+    color: white;
+}
+
+#weatherStatusImage {
+    margin: 0 1.5rem 0 .5rem;
+    width: 2rem;
+    height: 2rem;
+
+}
+
+
 /*--------------------------- boardGames --------------------------------*/
 
 .boardGames {
@@ -485,22 +510,54 @@ form textarea {
 /*--------------------------- Card profiles --------------------------------*/
 /*--------------------------- Card profiles --------------------------------*/
 /*--------------------------- Card profiles --------------------------------*/
+
+/*--------- Weather data ----------------------*/
+
+.mtb-hide {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.games-hide {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.category-mtb {
+    width: 100vw;
+    margin: 0 auto;
+    /* display:initial; */
+}
+
+.category-games {
+    width: 100vw;
+    margin: 0 auto;
+    /* display:initial; */
+}
+
+
 .category-fit,
 .category-boardgames,
-.categoryComics {
+.categoryComics,
+.category-mtb h2,
+.category-games h2 {
     width: 100vw;
     margin: 0 auto;
 }
 
-.category-fit h2,
-.category-boardgames h2,
-.categoryComics h2 {
-    margin: 1em 12.5vw 0 12.5vw;
-}
-
 .category-fit div,
 .category-boardgames div,
-.categoryComics div {
+.categoryComics div,
+.category-mtb div,
+.category-games div {
     /* display: flex;
     justify-content: center;
     flex-direction: row;
@@ -512,14 +569,18 @@ form textarea {
 
 .category-fit img,
 .category-boardgames img,
-.categoryComics img {
+.categoryComics img,
+.category-mtb img,
+.category-games img {
     border-radius: .9em .9em 0em 0em;
     width: 12em;
 }
 
 .category-fit div article,
 .category-boardgames div article,
-.categoryComics div article {
+.categoryComics div article,
+.category-mtb div article,
+.category-games div article {
     width: 12em;
     margin: 2em 10vw 4em 12.5vw;
     border-radius: 1em;
@@ -539,7 +600,9 @@ form textarea {
 
 .category-fit div article h4,
 .category-boardgames div article h4,
-.categoryComics div article h4 {
+.categoryComics div article h4,
+.category-mtb div article h4,
+.category-games div article h4 {
     width: 12rem;
     padding: .5em 1em 0em 1em;
     color: white;
@@ -554,13 +617,16 @@ form textarea {
 
 .category-fit div article p,
 .category-boardgames div article p,
-.categoryComics div article p {
+.categoryComics div article p,
+.category-mtb div article p,
+.category-games div article p {
     width: 12em;
     padding: 0em 1em .5em 1em;
     color: white;
     white-space: normal;
     word-wrap: break-word;
 }
+
 
 /*--------------------------- Profile page --------------------------------*/
 /*--------------------------- Profile page --------------------------------*/
@@ -759,18 +825,20 @@ footer {
     }
 
     /*--------------------------- profile cards--------------------------------*/
-
-
     .category-fit,
     .category-boardgames,
-    .categoryComics {
+    .categoryComics,
+    .category-mtb,
+    .category-games {
         width: 60vw;
         margin: 0 auto;
     }
 
     .category-fit div,
     .category-boardgames div,
-    .categoryComics div {
+    .categoryComics div,
+    .category-mtb div,
+    .category-games div {
         display: flex;
         justify-content: flex-start;
         align-content: flex-start;
@@ -782,20 +850,26 @@ footer {
 
     .category-fit div article,
     .category-boardgames div article,
-    .categoryComics div article {
+    .categoryComics div article,
+    .category-mtb div article,
+    .category-games div article {
         margin: 2em 1em 2em 1em;
 
     }
 
     .category-fit h2,
     .category-boardgames h2,
-    .categoryComics h2 {
+    .categoryComics h2,
+    .category-mtb h2,
+    .category-games h2 {
         margin: 1em 1em 0 1em;
     }
 
     .category-fit div article:hover,
     .category-boardgames div article:hover,
-    .categoryComics div article:hover {
+    .categoryComics div article:hover,
+    .category-mtb div article:hover,
+    .category-games div article:hover {
         background: #FF0073;
         box-shadow: 10px 10px 30px #d9d9d9,
             -10px -10px 30px #ffffff;

@@ -1,0 +1,62 @@
+<section class="boardGames">
+    <div>
+        <img id='sectionImage' src="images/hotrod-die-cast-model-on-board-1422673.jpg"
+            alt="Monopoly board game - Starting point" />
+        <!-- Hazelwood, S. (2018). Bedrijf bestuur binnen binnenshuis [Foto]. 
+              Geraadpleegd van https://www.pexels.com/nl-nl/foto/bedrijf-bestuur-binnen-binnenshuis-1422673/ -->
+        <article>
+            <h2 id="weatherHeaderSection"> </h2>
+            <span class="statusC">
+                <img id="weatherStatusImage" src="images/sunny.svg" alt="sunny">
+                <h4 id="weatherStatus"> Great wheater!</h4>
+            </span>
+            <p id="sectionIntroduction"> </p>
+        </article>
+    </div>
+</section>
+
+<div id="mtb-hide">
+    <section class="category-mtb">
+        <p class="userLocation"><%= user.location %></p>
+        <h2 id="weatherHeaderMTB">The weather is great! Find some people to Mountainbike with:</h2>
+        <div>
+            <!--       Category 1   Results        -->
+            <% for (let i = 0; i < dataMTB.length; i++) { %>
+            <article>
+                <a href="/<%= dataMTB[i].profileId %>">
+                    <img src="uploads/<%= dataMTB[i].profilePicture %>" alt="Profile photo">
+                    <h4>
+                        <%= dataMTB[i].firstname %> • <%= dataMTB[i].age %>
+                    </h4>
+                    <p>
+                        <%= dataMTB[i].location %>
+                    </p>
+                </a>
+            </article>
+            <% } %>
+        </div>
+    </section>
+</div>
+
+<div id="games-hide">
+    <section class="category-games">
+        <p class="userLocation"><%= user.location %></p>
+        <h2 id="weatherHeaderGames">The weather is great! Find some people to Mountainbike with:</h2>
+        <div>
+            <!--       Category 1   Results        -->
+            <% for (let i = 0; i < dataGames.length; i++) { %>
+            <article>
+                <a href="/<%= dataGames[i].profileId %>">
+                    <img src="uploads/<%= dataGames[i].profilePicture %>" alt="Profile photo">
+                    <h4>
+                        <%= dataGames[i].firstname %> • <%= dataGames[i].age %>
+                    </h4>
+                    <p>
+                        <%= dataGames[i].location %>
+                    </p>
+                </a>
+            </article>
+            <% } %>
+        </div>
+    </section>
+</div>
