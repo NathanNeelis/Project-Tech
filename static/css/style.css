@@ -543,14 +543,21 @@ form textarea {
     /* display:initial; */
 }
 
+/* End weather data */
 
 .category-fit,
 .category-boardgames,
-.categoryComics,
-.category-mtb h2,
-.category-games h2 {
+.categoryComics {
     width: 100vw;
     margin: 0 auto;
+}
+
+.category-fit h2,
+.category-boardgames h2,
+.categoryComics h2,
+.category-mtb h2,
+.category-games h2 {
+    margin: 1em 12.5vw 0 12.5vw;
 }
 
 .category-fit div,
