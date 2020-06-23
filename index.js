@@ -61,6 +61,7 @@ app.use(session({
 app.post("/", upload.single("profilePicture"), add);
 app.get("/", home); // Routing
 app.get("/search", search); // Routing
+app.post('/search', search);
 app.get("/register", register); // Routing
 app.get("/login", login); // Routing
 app.post("/login", loginUser);
@@ -112,6 +113,12 @@ async function home(req, res, next) {
     interests: "Comics",
     interests: "comics" // Looks in all data for people that have comics in their interests
   }).toArray();
+  const dataMTB = await db.collection("friendshipData").find({
+    interests: 'Mountainbike' // Looks in all data for people that have comics in their interests
+  }).toArray();
+  const dataGames = await db.collection("friendshipData").find({
+    interests: 'Games' // Looks in all data for people that have comics in their interests
+  }).toArray();
 
   if (req.session.user) { // Is there a user logged in? If so then:
     const myData = await db.collection("friendshipData").findOne({
@@ -122,16 +129,18 @@ async function home(req, res, next) {
       res.send("Error occured while retrieving data");
     }
 
-    done(allData, myData, dataBG, dataComics);
+    done(allData, myData, dataBG, dataComics, dataMTB, dataGames);
 
-    function done(allData, myData, dataBG, dataComics) {
+    function done(allData, myData, dataBG, dataComics, dataMTB, dataGames) {
       // console.log("this is all data", allData);
       // console.log("this is my data", myData);
       res.render("index.ejs", {
         user: myData,
         data: allData,
         dataBG: dataBG,
-        dataComics: dataComics
+        dataComics: dataComics,
+        dataMTB: dataMTB,
+        dataGames: dataGames
 
       });
     }
@@ -187,25 +196,51 @@ function register(req, res) {
 }
 
 // search page
-function search(req, res, next) {
-  db.collection("friendshipData").find().toArray(done);
-
-  if (!req.session.user) {
-    res.redirect("/login");
-  }
-
-  function done(err, data) {
-    if (err) {
-      next(err);
-    } else {
-      res.render("search.ejs", {
-        data: data,
-        user: req.session.user
+async function search(req, res) {
+  {
+    try {
+      const allData = await db.collection("friendshipData").find().toArray(); // all data in database
+      const user = await db.collection("friendshipData").findOne({ // find session user
+        _id: req.session.sessionID,
       });
-    }
-  }
-}
+      const search = await db.collection("friendshipData").find({ // find data that equals filtered activity
+        interests: req.body.activity
+      }).toArray();
+      const activity = req.body.activity; // filtered activity
 
+
+      if (user) { // checks if there is a user logged in
+        const done = async (allData, user, search, activity) => {
+          const equalActivities = await db.collection("friendshipData").find({ // finds other users with the same interests 
+            interests: user.interests[0] // How to create loop here?
+          }).toArray();
+          req.session.search = search; // makes a session on the filtered activity
+          res.render('search.ejs', {
+            data: allData,
+            user: user,
+            dataFilter: req.session.search,
+            activity: activity,
+            dataEqual: equalActivities
+          });
+        };
+        done(allData, user, search, activity);
+      } else { // if there is no user logged in
+        const done = async (allData, search, activity) => {
+          req.session.search = search;
+          res.render('search.ejs', {
+            user: user,
+            data: allData,
+            dataFilter: req.session.search,
+            activity: activity
+          });
+        };
+        done(allData, search, activity);
+      }
+    } catch (err) {
+      res.send('something went wrong in the gathering the data'); // Error handling
+    }
+  };
+}
 // register data to database
 function add(req, res, next) {
   let id = slug(req.body.profileId).toLowerCase();
