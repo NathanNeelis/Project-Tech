@@ -175,9 +175,24 @@ const games = (weather) => {
 
 
 
-// Resources:
-// https://openweathermap.org/current
-// https://openweathermap.org/weather-conditions
+/*
+Resources:
+The coding train. (2019, May 17). 1.1: fetch() - Working With Data & APIs in JavaScript. [Video file]. Retrieved from https://www.youtube.com/watch?v=tc8DU14qX6I&t=1s
+
+The coding train. (2019, June 3). 2.3 HTTP Post Request with fetch() - Working with Data and APIs in JavaScript [Video file]. Retrieved from https://www.youtube.com/watch?v=Kw5tC5nQMRY
+
+The Coding train. (2019, June 12). 3.1 API calls from Node.js (Weather data from Dark Sky) - Working with Data and APIs in JavaScript [Video file]. Retrieved from https://www.youtube.com/watch?v=ZtLVbJk7KcM&t=396s
+
+MDN. (2020g, June 17). Using Fetch. Retrieved 19 June 2020, from https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+Bankras, S. (2020, April 14). StanBankras/amatch. Retrieved 22 June 2020, from https://github.com/StanBankras/amatch/wiki/Topic:-External-API
+
+OpenWeatherMap.org. (n.d.). Current weather data - OpenWeatherMap. Retrieved from https://openweathermap.org/current
+https://openweathermap.org/weather-conditions
+
+OpenWeatherMap.org. (n.d.-b). Weather Conditions - OpenWeatherMap. Retrieved from https://openweathermap.org/weather-conditions
 
 // use later
-// https://www.google.com/search?q=api+in+nodejs&rlz=1C5CHFA_enNL886NL886&oq=api+in+nodejs&aqs=chrome..69i57j0l7.3061j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_CSzqXrK0A9D9kwXC2KCgDQ73
+https://www.google.com/search?q=api+in+nodejs&rlz=1C5CHFA_enNL886NL886&oq=api+in+nodejs&aqs=chrome..69i57j0l7.3061j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_CSzqXrK0A9D9kwXC2KCgDQ73
+
+*/
