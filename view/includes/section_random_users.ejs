@@ -1,0 +1,20 @@
+<section class="category-fit">
+    <h2>These people might be interesting to you!</h2>
+    <div>
+        <!--  some random users      -->
+        <% for (let i = 0; i < data.length; i++) { %>
+        <article>
+            <a href="/<%= data[i].profileId %>">
+                <img src="uploads/<%= data[i].profilePicture %>" alt="Profile photo">
+                <h4>
+                    <%= data[i].firstname %> • <%= data[i].age %>
+                </h4>
+                <p>
+                    <%= data[i].location %>
+                </p>
+            </a>
+        </article>
+        <% } %>
+    </div>
+
+</section>

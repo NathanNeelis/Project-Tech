@@ -4,7 +4,20 @@
     <%- include('includes/header.ejs'); %>
     <main>
         <%- include('includes/filter.ejs'); %>
+        <% if (activity === undefined) { %>
+        <% if (user) { %>
+        <%- include('includes/section_fit.ejs'); %>
+        <% } else {%>
+        <%- include('includes/section_random_users.ejs'); %>
+        <% } %>
+
+        <% } else if (dataFilter.length <= 0) { %>
+        <%- include('includes/no-result.ejs'); %>
+        <% } else { %>
         <%- include('includes/section_result.ejs'); %>
+        <% } %>
+
+
     </main>
     <%- include('includes/footer.ejs'); %>
     <%- include('includes/scripts.ejs'); %>
